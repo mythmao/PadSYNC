@@ -1,0 +1,8 @@
+E:\project\PadSYNC\LogUnity\bin\Debug\LogUnity.exe.config
+E:\project\PadSYNC\LogUnity\bin\Debug\LogUnity.exe
+E:\project\PadSYNC\LogUnity\bin\Debug\LogUnity.pdb
+E:\project\PadSYNC\LogUnity\bin\Debug\log4net.dll
+E:\project\PadSYNC\LogUnity\bin\Debug\log4net.xml
+E:\project\PadSYNC\LogUnity\obj\Debug\LogUnity.exe
+E:\project\PadSYNC\LogUnity\obj\Debug\LogUnity.pdb
+E:\project\PadSYNC\LogUnity\obj\Debug\LogUnity.csprojResolveAssemblyReference.cache

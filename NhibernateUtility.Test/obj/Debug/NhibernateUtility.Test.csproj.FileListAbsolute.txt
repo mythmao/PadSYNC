@@ -1,0 +1,13 @@
+E:\project\PadSYNC\NhibernateUtility.Test\obj\Debug\NhibernateUtility.Test.csprojResolveAssemblyReference.cache
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\hibernate.cfg.xml
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\NhibernateUtility.Test.exe.config
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\NhibernateUtility.Test.exe
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\NhibernateUtility.Test.pdb
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\NHibernate.dll
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\NHibernateUtility.dll
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\nunit.framework.dll
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\System.Data.SqlServerCe.dll
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\Iesi.Collections.dll
+E:\project\PadSYNC\NhibernateUtility.Test\bin\Debug\NHibernateUtility.pdb
+E:\project\PadSYNC\NhibernateUtility.Test\obj\Debug\NhibernateUtility.Test.exe
+E:\project\PadSYNC\NhibernateUtility.Test\obj\Debug\NhibernateUtility.Test.pdb

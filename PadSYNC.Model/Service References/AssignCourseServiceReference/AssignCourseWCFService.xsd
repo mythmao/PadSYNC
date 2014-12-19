@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cloud" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cloud" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="FileInfo">
+    <xs:sequence>
+      <xs:element name="_CreateDate" type="xs:dateTime" />
+      <xs:element name="_DefaultViewDescription" nillable="true" type="xs:string" />
+      <xs:element name="_DefaultViewKeywords" nillable="true" type="xs:string" />
+      <xs:element name="_DefaultViewName" nillable="true" type="xs:string" />
+      <xs:element name="_DefaultViewTempletName" nillable="true" type="xs:string" />
+      <xs:element name="_DefaultViewTitle" nillable="true" type="xs:string" />
+      <xs:element name="_Extend1" nillable="true" type="xs:string" />
+      <xs:element name="_Extend2" nillable="true" type="xs:string" />
+      <xs:element name="_FileEdition" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_FileInfoPropertys" nillable="true" type="q1:ArrayOfKeyValueOfstringlong" />
+      <xs:element name="_FromObjectID" type="xs:long" />
+      <xs:element name="_HostID" type="xs:long" />
+      <xs:element name="_ID" type="xs:long" />
+      <xs:element name="_IsSecurityInherit" type="xs:boolean" />
+      <xs:element name="_ListOrder" type="xs:int" />
+      <xs:element name="_ModifyDate" type="xs:dateTime" />
+      <xs:element name="_Name" nillable="true" type="xs:string" />
+      <xs:element name="_ObjectID" type="xs:long" />
+      <xs:element name="_ObjectTypeID" type="xs:long" />
+      <xs:element name="_OwnObject" nillable="true" type="xs:anyType" />
+      <xs:element name="_Owner" type="xs:long" />
+      <xs:element name="_ProductEdition" type="xs:decimal" />
+      <xs:element name="_ShareType" type="xs:int" />
+      <xs:element name="_ShareTypeDB" type="xs:int" />
+      <xs:element name="_State" nillable="true" type="xs:string" />
+      <xs:element name="_SuitType" type="tns:SuitType" />
+      <xs:element name="_SuitViewName" nillable="true" type="xs:string" />
+      <xs:element name="_SuitViewTempletName" nillable="true" type="xs:string" />
+      <xs:element name="_Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfo" nillable="true" type="tns:FileInfo" />
+  <xs:simpleType name="SuitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UnLimit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SuitingCurrentObject">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotSuit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomFolder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomKernelView">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SuitType" nillable="true" type="tns:SuitType" />
+  <xs:simpleType name="ObjectState">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New" />
+      <xs:enumeration value="Loaded" />
+      <xs:enumeration value="Opened" />
+      <xs:enumeration value="Saved" />
+      <xs:enumeration value="Deleted" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Copy" />
+      <xs:enumeration value="Move" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ObjectState" nillable="true" type="tns:ObjectState" />
+</xs:schema>

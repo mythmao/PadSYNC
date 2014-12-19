@@ -1,0 +1,8 @@
+
+ 
+记录时间：2014-12-16 11:50:42,471 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：LogUnity.Program property: [(null)] - 
+错误描述：testaaa
+ 

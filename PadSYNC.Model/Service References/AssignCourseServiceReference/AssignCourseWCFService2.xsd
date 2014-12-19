@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cloud.Course" />
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" />
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Cloud.BackOffice.Common" />
+  <xs:element name="SelectSubjectBy_TeacherUserID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectSubjectBy_TeacherUserIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectSubjectBy_TeacherUserIDResult" nillable="true" type="q1:ArrayOfStudentAssignCourseSubject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectSubjectBy_TeacherUserIDNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectSubjectBy_TeacherUserIDNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectSubjectBy_TeacherUserIDNewResult" nillable="true" type="q2:ArrayOfStudentAssignCourseSubject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlanGetSubject_GradeBystudentID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlanGetSubject_GradeBystudentIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="XPlanGetSubject_GradeBystudentIDResult" nillable="true" type="q3:ArrayOfXPlanSubjectGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlanGetSubject_GradeBystudentIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="studentIDList" nillable="true" type="q4:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlanGetSubject_GradeBystudentIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="XPlanGetSubject_GradeBystudentIDsResult" nillable="true" type="q5:ArrayOfXPlanSubjectGroupNew" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_SelectCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="studentID" nillable="true" type="q6:ArrayOflong" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Status" nillable="true" type="q7:ArrayOfint" />
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_SelectCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="CUS_SelectCourseResult" nillable="true" type="q8:ArrayOfAssignCourse_TeacherAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_SelectCourseNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_SelectCourseNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="CUS_SelectCourseNewResult" nillable="true" type="q9:ArrayOfAssignCourse_TeacherAppreciation" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_SelectCourseCurrMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_SelectCourseCurrMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="CUS_SelectCourseCurrMonthResult" nillable="true" type="q10:ArrayOfAssignCourse_TeacherAppreciation" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Mircro_SelectCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Mircro_SelectCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="Mircro_SelectCourseResult" nillable="true" type="q11:ArrayOfMircroAssignCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectTeacherAppreciationBy_AssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectTeacherAppreciationBy_AssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectTeacherAppreciationBy_AssignIDResult" nillable="true" type="q12:TeacherAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCourseService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCourseServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCourseServiceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyCourseReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comoID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyCourseReceiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCompanyCourseReceiveResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NEWClassGroup_CreateClassTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" type="xs:long" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="shcoolIDList" nillable="true" type="q13:ArrayOflong" />
+        <xs:element minOccurs="0" name="classTimes" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NEWClassGroup_CreateClassTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NEWClassGroup_CreateClassTimeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" type="xs:long" />
+        <xs:element minOccurs="0" name="shcoolID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMaxTimeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+        <xs:element minOccurs="0" name="ConfirmPersonStyle" type="xs:int" />
+        <xs:element minOccurs="0" name="ConfirmSource" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConfirmCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectAssignCourseBy_StudentIDs_Status">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="studentID" nillable="true" type="q14:ArrayOflong" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Status" nillable="true" type="q15:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectAssignCourseBy_StudentIDs_StatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectAssignCourseBy_StudentIDs_StatusResult" nillable="true" type="q16:ArrayOfAssignCourse_TeacherAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePretreatmentTemporaryAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="pretreatmentTemporaryAssignCourseDataContract" nillable="true" type="q17:PretreatmentTemporaryAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePretreatmentTemporaryAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePretreatmentTemporaryAssignCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTeacherAppreciationPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="AppreciationLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="StydyAttitudeLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="StydyAttentionLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ThinkSkillLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="UnderstandsSkillLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="AppreciationSelfRemark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AllLevel" type="xs:decimal" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="KnowledgePointAppreciationDataContractList" nillable="true" type="q18:ArrayOfKnowledgePointAppreciationDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTeacherAppreciationPointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTeacherAppreciationPointResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppreciationID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteByAssignIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_AppreciationID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppreciationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_AppreciationIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectListBy_AppreciationIDResult" nillable="true" type="q19:ArrayOfKnowledgePointAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectAssignCourseBy_StudentIDs_Status_Point">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="studentID" nillable="true" type="q20:ArrayOflong" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Status" nillable="true" type="q21:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectAssignCourseBy_StudentIDs_Status_PointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectAssignCourseBy_StudentIDs_Status_PointResult" nillable="true" type="q22:ArrayOfAssignCourse_TeacherAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectMyAssignFiliter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q23:MyAssignCourseConditions" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectMyAssignFiliterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectMyAssignFiliterResult" nillable="true" type="q24:ArrayOfMyAssignCourse" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyAssignHours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q25:MyAssignCourseConditions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyAssignHoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMyAssignHoursResult" nillable="true" type="q26:ArrayOfKeyValueOfstringdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveKnowledgePointAppreciation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="KnowledgePointAppreciationDataContractList" nillable="true" type="q27:ArrayOfKnowledgePointAppreciationDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveKnowledgePointAppreciationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveKnowledgePointAppreciationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteByAssignIDNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteByAssignIDNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteByAssignIDNewResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_AssignIDNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_AssignIDNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectListBy_AssignIDNewResult" nillable="true" type="q28:ArrayOfKnowledgePointAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectTeachingAccessoryBy_AssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectTeachingAccessoryBy_AssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectTeachingAccessoryBy_AssignIDResult" nillable="true" type="q29:ArrayOfTeachingAccessoryDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTeachingAccessory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="TeachingAccessoryDataContract_" nillable="true" type="q30:TeachingAccessoryDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTeachingAccessoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTeachingAccessoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTeachingAccessoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q31:ArrayOfTeachingAccessoryDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTeachingAccessoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTeachingAccessoryListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTeachingAccessoryByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTeachingAccessoryByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTeachingAccessoryByAssignIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPlanStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPlanStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckPlanStatusResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBy_Assign_PointID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+        <xs:element minOccurs="0" name="KnowledgePointID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBy_Assign_PointIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBy_Assign_PointIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_Assign_PointID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="KnowledgePointID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_Assign_PointIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectListBy_Assign_PointIDResult" nillable="true" type="q32:ArrayOfKnowledgePointAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeachingVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeachingVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTeachingVersionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCourseIncomeVirtual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="obj" nillable="true" type="q33:CourseIncomeVirtualDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCourseIncomeVirtualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveCourseIncomeVirtualResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_GetTeacherCourseTimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUS_GetTeacherCourseTimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="CUS_GetTeacherCourseTimesResult" nillable="true" type="q34:ArrayOfTeacherCourseTimes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectByAssignIDResult" nillable="true" type="q35:TempPlanSaveDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TempPlanSave_save">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="obj" nillable="true" type="q36:TempPlanSaveDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TempPlanSave_saveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TempPlanSave_saveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempKnowledgePoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="TempKnowledgePointDataContract_" nillable="true" type="q37:TempKnowledgePointDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempKnowledgePointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTempKnowledgePointResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempKnowledgePointList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q38:ArrayOfTempKnowledgePointDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempKnowledgePointListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTempKnowledgePointListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListByAssignIDResult" nillable="true" type="q39:ArrayOfTempKnowledgePointDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTempKnowledgePointByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTempKnowledgePointByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTempKnowledgePointByAssignIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempTeachingAccessory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="TempTeachingAccessoryDataContract_" nillable="true" type="q40:TempTeachingAccessoryDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempTeachingAccessoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTempTeachingAccessoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempTeachingAccessoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q41:ArrayOfTempTeachingAccessoryDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTempTeachingAccessoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTempTeachingAccessoryListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectTempTeachingAccessoryListByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectTempTeachingAccessoryListByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectTempTeachingAccessoryListByAssignIDResult" nillable="true" type="q42:ArrayOfTempTeachingAccessoryDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTempTeachingAccessoryByAssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTempTeachingAccessoryByAssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTempTeachingAccessoryByAssignIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_SelectCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_SelectCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="XPlan_SelectCourseResult" nillable="true" type="q43:ArrayOfXPlanAssignCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_SelectCourse_ByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_SelectCourse_ByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="XPlan_SelectCourse_ByIDResult" nillable="true" type="q44:XPlanAssignCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlanGetSubject_Grade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlanGetSubject_GradeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="XPlanGetSubject_GradeResult" nillable="true" type="q45:ArrayOfXPlanSubjectGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_SelectCourse_ByStudent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_SelectCourse_ByStudentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="XPlan_SelectCourse_ByStudentResult" nillable="true" type="q46:ArrayOfXPlanAssignCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_StudentID_BY_Teacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherPassportID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPlan_StudentID_BY_TeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="XPlan_StudentID_BY_TeacherResult" nillable="true" type="q47:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTime_All">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q48:ArrayOfCheckTimeConditionsDataContract" />
+        <xs:element minOccurs="0" name="errorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTime_AllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CheckSimpleResourceTime_AllResult" nillable="true" type="q49:ArrayOfCheckTimeConditionsDataContract" />
+        <xs:element minOccurs="0" name="errorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListByIDForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListByIDForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListByIDForArrResult" nillable="true" type="q50:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q51:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListForArrResult" nillable="true" type="q52:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="copyClassTableConditionsDataContract" nillable="true" type="q53:CopyClassTableConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CopyClassTableForArrResult" type="xs:boolean" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q54:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleAssignCourseForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CancelReasonConditionsList" nillable="true" type="q55:ArrayOfCancelReasonConditionsDataContract" />
+        <xs:element minOccurs="0" name="ProcesserID" type="xs:int" />
+        <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssignType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleAssignCourseForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancleAssignCourseForArrResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TemporaryAssignCourseForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="temporaryAssignConditionsList" nillable="true" type="q56:ArrayOfTemporaryAssignConditionsDataContract" />
+        <xs:element minOccurs="0" name="ProcesserID" type="xs:long" />
+        <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TemporaryAssignCourseForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TemporaryAssignCourseForArrResult" type="xs:boolean" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q57:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectFreeTeacherForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="teacherIDs" nillable="true" type="q58:ArrayOflong" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q59:ArrayOfTeachTimeDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectFreeTeacherForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectFreeTeacherForArrResult" nillable="true" type="q60:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeAllForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q61:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeAllForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CheckSimpleResourceTimeAllForArrResult" nillable="true" type="q62:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeTeacherForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q63:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeTeacherForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CheckSimpleResourceTimeTeacherForArrResult" nillable="true" type="q64:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTime_AllForArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q65:ArrayOfCheckTimeConditionsDataContract" />
+        <xs:element minOccurs="0" name="errorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTime_AllForArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CheckSimpleResourceTime_AllForArrResult" nillable="true" type="q66:ArrayOfCheckTimeConditionsDataContract" />
+        <xs:element minOccurs="0" name="errorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectAssignCourseListByArgs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="asignCourseId" type="xs:long" />
+        <xs:element minOccurs="0" name="studentId" type="xs:long" />
+        <xs:element minOccurs="0" name="asignStatus" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectAssignCourseListByArgsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectAssignCourseListByArgsResult" nillable="true" type="q67:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="InnerStartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="InnerEndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckSimpleResourceTimeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CheckType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSomeOneConfirm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+        <xs:element minOccurs="0" name="hostID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSomeOneConfirmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsSomeOneConfirmResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOneTeacherAssignCourseRetErrowString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourse" nillable="true" type="q68:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOneTeacherAssignCourseRetErrowStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddOneTeacherAssignCourseRetErrowStringResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ErrowString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddStudentAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentUerID" type="xs:long" />
+        <xs:element minOccurs="0" name="ProductID" type="xs:long" />
+        <xs:element minOccurs="0" name="ProductCount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ErrowString" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="pUserInfo" nillable="true" type="q69:PUserInfoDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddStudentAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddStudentAssignCourseResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ProductCount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ErrowString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_CheckTemporaryAssignCourseTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="CheckType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_CheckTemporaryAssignCourseTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BZ_CheckTemporaryAssignCourseTimeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CheckType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeManagerRefishCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProductID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="TeacherJobID" type="xs:long" />
+        <xs:element minOccurs="0" name="TeacherJobPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeManagerRefishCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeManagerRefishCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleClassGroupAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterProductID" type="xs:long" />
+        <xs:element minOccurs="0" name="ProcesserID" type="xs:int" />
+        <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssignType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleClassGroupAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancleClassGroupAssignCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_IsHaveClassGroupStudentCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterProductID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_IsHaveClassGroupStudentCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BZ_IsHaveClassGroupStudentCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_CancleTeacherCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterProductID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_CancleTeacherCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BZ_CancleTeacherCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_IsClassGroupStudentCourse_AllCancle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterProductID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BZ_IsClassGroupStudentCourse_AllCancleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BZ_IsClassGroupStudentCourse_AllCancleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProductIsAvailable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" type="xs:long" />
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProductIsAvailableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckProductIsAvailableResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errorValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProductIsAvailable_ForMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MasterProductID" type="xs:long" />
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProductIsAvailable_ForMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckProductIsAvailable_ForMasterResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errorValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAssignCourseTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAssignCourseTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckAssignCourseTeacherResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckStudentCoursed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentUserId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckStudentCoursedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckStudentCoursedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnSS">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnSSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="returnSSResult" nillable="true" type="q70:AssignCourseSeachConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignForStaff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q71:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignForStaffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssignForStaffResult" nillable="true" type="q72:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+        <xs:element minOccurs="0" name="sumTeacherHours" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignForStaffPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q73:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="asignStatusList" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignForStaffPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssignForStaffPrintResult" nillable="true" type="q74:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAssignCourseByStudentAssignCourseID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignCourseID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAssignCourseByStudentAssignCourseIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteAssignCourseByStudentAssignCourseIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastStartTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastStartTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastStartTimeResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAbnormal">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAbnormalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetAbnormalResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTeacherAppreciation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="AppreciationLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTeacherAppreciationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertTeacherAppreciationResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTeacherAppreciationNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="AppreciationLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="StydyAttitudeLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="StydyAttentionLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ThinkSkillLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="UnderstandsSkillLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="AppreciationSelfRemark" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTeacherAppreciationNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertTeacherAppreciationNewResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTeacherAppreciationPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="AppreciationLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="StydyAttitudeLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="StydyAttentionLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ThinkSkillLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="UnderstandsSkillLevel" type="xs:decimal" />
+        <xs:element minOccurs="0" name="AppreciationSelfRemark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AllLevel" type="xs:decimal" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="KnowledgePointAppreciationDataContractList" nillable="true" type="q75:ArrayOfKnowledgePointAppreciationDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTeacherAppreciationPointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertTeacherAppreciationPointResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeacherAppreciation_ByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeacherAppreciation_ByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="GetTeacherAppreciation_ByIDResult" nillable="true" type="q76:TeacherAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_AssignID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListBy_AssignIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Cloud.Course" minOccurs="0" name="SelectListBy_AssignIDResult" nillable="true" type="q77:TeacherAppreciation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Save">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourse" nillable="true" type="q78:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourse" nillable="true" type="q79:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Select">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="hostID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectResult" nillable="true" type="q80:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectWithIdentity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="hostID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectWithIdentityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectWithIdentityResult" nillable="true" type="q81:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="assignID" type="xs:long" />
+        <xs:element minOccurs="0" name="hostID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectFreeTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="teacherIDs" nillable="true" type="q82:ArrayOflong" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q83:ArrayOfTeachTimeDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectFreeTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectFreeTeacherResult" nillable="true" type="q84:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllReadyClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllReadyClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="GetAllReadyClassResult" nillable="true" type="q85:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleCourseForTeacherChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleCourseForTeacherChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancleCourseForTeacherChangeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateClassAdviser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterProductId" type="xs:long" />
+        <xs:element minOccurs="0" name="managerUserID" type="xs:long" />
+        <xs:element minOccurs="0" name="managerPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="managerJobPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="managerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateClassAdviserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateClassAdviserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOppositionAssignCourseTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOppositionAssignCourseTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="GetOppositionAssignCourseTeacherResult" nillable="true" type="q86:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourse" nillable="true" type="q87:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewAssignCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAssignCourseRetErrowType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourse" nillable="true" type="q88:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAssignCourseRetErrowTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewAssignCourseRetErrowTypeResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CheckType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAssignCourseRetErrowString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourse" nillable="true" type="q89:AssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAssignCourseRetErrowStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewAssignCourseRetErrowStringResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ErrowString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListByIDResult" nillable="true" type="q90:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q91:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListResult" nillable="true" type="q92:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssign">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q93:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssignResult" nillable="true" type="q94:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+        <xs:element minOccurs="0" name="sumTeacherHours" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrMonthClassNumByStudentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudentId" type="xs:long" />
+        <xs:element minOccurs="0" name="iYear" type="xs:int" />
+        <xs:element minOccurs="0" name="iMonth" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrMonthClassNumByStudentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="GetCurrMonthClassNumByStudentIdResult" nillable="true" type="q95:StudentClassHourDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssign_ByParentID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="Conditions" nillable="true" type="q96:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="ParentID" type="xs:long" />
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Cloud.BackOffice.Common" minOccurs="0" name="userToken" nillable="true" type="q97:UserToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssign_ByParentIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssign_ByParentIDResult" nillable="true" type="q98:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q99:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="asignStatusList" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssignPrintResult" nillable="true" type="q100:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignFiliter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q101:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="Filiter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignFiliterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssignFiliterResult" nillable="true" type="q102:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+        <xs:element minOccurs="0" name="sumTeacherHours" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignFiliterPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q103:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="asignStatusList" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Filiter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectListAssignFiliterPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectListAssignFiliterPrintResult" nillable="true" type="q104:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XC_SelectListAssign_Student_OR_Teacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q105:XC_AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XC_SelectListAssign_Student_OR_TeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="XC_SelectListAssign_Student_OR_TeacherResult" nillable="true" type="q106:ArrayOfAssignCourseDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeacherHoursFiliter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q107:AssignCourseSeachConditionsDataContract" />
+        <xs:element minOccurs="0" name="Filiter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeacherHoursFiliterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTeacherHoursFiliterResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeacherHours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="assignCourseSeachConditions" nillable="true" type="q108:AssignCourseSeachConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeacherHoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTeacherHoursResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="copyClassTableConditionsDataContract" nillable="true" type="q109:CopyClassTableConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CopyClassTableResult" type="xs:boolean" />
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q110:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="copyClassTableConditionsDataContract" nillable="true" type="q111:CopyClassTableConditionsDataContract" />
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Cloud.BackOffice.Common" minOccurs="0" name="userToken" nillable="true" type="q112:UserToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CopyClassTableNewResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableNew_For_PPTS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="copyClassTableConditionsDataContract" nillable="true" type="q113:CopyClassTableConditionsDataContract" />
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Cloud.BackOffice.Common" minOccurs="0" name="userToken" nillable="true" type="q114:UserToken" />
+        <xs:element xmlns:q115="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="copyTime" nillable="true" type="q115:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableNew_For_PPTSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CopyClassTableNew_For_PPTSResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="copyClassTableConditionsDataContract" nillable="true" type="q116:CopyClassTableConditionsDataContract" />
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Cloud.BackOffice.Common" minOccurs="0" name="userToken" nillable="true" type="q117:UserToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyClassTableTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CopyClassTableTeacherResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssignID" type="xs:int" />
+        <xs:element minOccurs="0" name="ProcesserID" type="xs:int" />
+        <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConfirmAssignCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CancelReasonConditionsList" nillable="true" type="q118:ArrayOfCancelReasonConditionsDataContract" />
+        <xs:element minOccurs="0" name="ProcesserID" type="xs:long" />
+        <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:long" />
+        <xs:element minOccurs="0" name="AssignType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancleAssignCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TemporaryAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="temporaryAssignConditionsList" nillable="true" type="q119:ArrayOfTemporaryAssignConditionsDataContract" />
+        <xs:element minOccurs="0" name="ProcesserID" type="xs:long" />
+        <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TemporaryAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TemporaryAssignCourseResult" type="xs:boolean" />
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q120:ArrayOfAssignCourseDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FirstCourseConfirm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignCourseID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FirstCourseConfirmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FirstCourseConfirmResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignCourseID" type="xs:long" />
+        <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="TeacherID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleCourseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancleCourseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectConflictInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="hostID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectConflictInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="SelectConflictInfoListResult" nillable="true" type="q121:ArrayOfConflictInfoDataContract" />
+        <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q122:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CheckSimpleResourceTimeAllResult" nillable="true" type="q123:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="list" nillable="true" type="q124:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSimpleResourceTimeTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" minOccurs="0" name="CheckSimpleResourceTimeTeacherResult" nillable="true" type="q125:ArrayOfCheckTimeConditionsDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

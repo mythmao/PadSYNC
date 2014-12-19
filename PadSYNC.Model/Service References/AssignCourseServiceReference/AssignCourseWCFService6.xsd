@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PretreatmentTemporaryAssignCourseDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplyStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="ApplyedEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ApplyedStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ApplyedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignCount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="ChangeID" type="xs:long" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:long" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultatorUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ManagerUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ManagerUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PretreatmentTemporaryAssignCourseID" type="xs:long" />
+      <xs:element minOccurs="0" name="SchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="SchoolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PretreatmentTemporaryAssignCourseDataContract" nillable="true" type="tns:PretreatmentTemporaryAssignCourseDataContract" />
+  <xs:complexType name="ArrayOfKnowledgePointAppreciationDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KnowledgePointAppreciationDataContract" nillable="true" type="tns:KnowledgePointAppreciationDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKnowledgePointAppreciationDataContract" nillable="true" type="tns:ArrayOfKnowledgePointAppreciationDataContract" />
+  <xs:complexType name="KnowledgePointAppreciationDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppreciationID" type="xs:long" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="KnowledgePointAppreciationID" type="xs:long" />
+      <xs:element minOccurs="0" name="KnowledgePointID" type="xs:int" />
+      <xs:element minOccurs="0" name="KnowledgePointLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KnowledgePointName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KnowledgePointAppreciationDataContract" nillable="true" type="tns:KnowledgePointAppreciationDataContract" />
+  <xs:complexType name="ArrayOfTeachingAccessoryDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeachingAccessoryDataContract" nillable="true" type="tns:TeachingAccessoryDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTeachingAccessoryDataContract" nillable="true" type="tns:ArrayOfTeachingAccessoryDataContract" />
+  <xs:complexType name="TeachingAccessoryDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessoryID" type="xs:long" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateUserJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="DocumentType" type="xs:int" />
+      <xs:element minOccurs="0" name="EditDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EditPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="EditUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="EditUserJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="EditUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileInfoID" type="xs:long" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FileType" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeachingAccessoryDataContract" nillable="true" type="tns:TeachingAccessoryDataContract" />
+  <xs:complexType name="CourseIncomeVirtualDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignCount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:long" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultatorPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConsultatorPassportJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConsultatorUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ContractCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractID" type="xs:long" />
+      <xs:element minOccurs="0" name="CourseIncomeID" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostID" type="xs:long" />
+      <xs:element minOccurs="0" name="IncomeStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ManagerJobPassPortID" type="xs:long" />
+      <xs:element minOccurs="0" name="ManagerUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ManagerUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManagerUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="PJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="PUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="PUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="SchoolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="StuendtCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="VoucherID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CourseIncomeVirtualDataContract" nillable="true" type="tns:CourseIncomeVirtualDataContract" />
+  <xs:complexType name="TempPlanSaveDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllCourseCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="CoursePlanCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseTask" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstructionalObjectives" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachingFocus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachingVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="TempPlanSaveID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempPlanSaveDataContract" nillable="true" type="tns:TempPlanSaveDataContract" />
+  <xs:complexType name="TempKnowledgePointDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="KnowledgePointID" type="xs:int" />
+      <xs:element minOccurs="0" name="KnowledgePointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempKnowledgePointID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempKnowledgePointDataContract" nillable="true" type="tns:TempKnowledgePointDataContract" />
+  <xs:complexType name="ArrayOfTempKnowledgePointDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TempKnowledgePointDataContract" nillable="true" type="tns:TempKnowledgePointDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTempKnowledgePointDataContract" nillable="true" type="tns:ArrayOfTempKnowledgePointDataContract" />
+  <xs:complexType name="TempTeachingAccessoryDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="DocumentType" type="xs:int" />
+      <xs:element minOccurs="0" name="FileInfoID" type="xs:long" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FileType" type="xs:int" />
+      <xs:element minOccurs="0" name="TempAccessoryID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempTeachingAccessoryDataContract" nillable="true" type="tns:TempTeachingAccessoryDataContract" />
+  <xs:complexType name="ArrayOfTempTeachingAccessoryDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TempTeachingAccessoryDataContract" nillable="true" type="tns:TempTeachingAccessoryDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTempTeachingAccessoryDataContract" nillable="true" type="tns:ArrayOfTempTeachingAccessoryDataContract" />
+  <xs:complexType name="ArrayOfCheckTimeConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CheckTimeConditionsDataContract" nillable="true" type="tns:CheckTimeConditionsDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheckTimeConditionsDataContract" nillable="true" type="tns:ArrayOfCheckTimeConditionsDataContract" />
+  <xs:complexType name="CheckTimeConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignCheckID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="CheckType" type="xs:int" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Flg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:long" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckTimeConditionsDataContract" nillable="true" type="tns:CheckTimeConditionsDataContract" />
+  <xs:complexType name="ArrayOfAssignCourseDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssignCourseDataContract" nillable="true" type="tns:AssignCourseDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssignCourseDataContract" nillable="true" type="tns:ArrayOfAssignCourseDataContract" />
+  <xs:complexType name="AssignCourseDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AbnormalReasonType" type="xs:int" />
+      <xs:element minOccurs="0" name="AllCourseCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnalyseTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AsignCourseID" type="xs:long" />
+      <xs:element minOccurs="0" name="AsignStatus" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AsignType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AssignConsumeStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="AssignCount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="CancelType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ClassTime" type="xs:long" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:long" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConformStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="ConsultatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultatorNames" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsultatorPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConsultatorPassportJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConsultatorUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConsumeCountHours" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContractCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractID" type="xs:long" />
+      <xs:element minOccurs="0" name="CourseConfirmTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoursePlanCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseSourceType" type="xs:long" />
+      <xs:element minOccurs="0" name="CourseTask" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseTimeLong" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CourseType" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerType" type="xs:int" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventID" type="xs:long" />
+      <xs:element minOccurs="0" name="FinancialTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasAnalyse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HostID" type="xs:long" />
+      <xs:element minOccurs="0" name="InstructionalObjectives" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ManagerJobPassPortID" type="xs:long" />
+      <xs:element minOccurs="0" name="ManagerUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ManagerUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManagerUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="MasterProductID" type="xs:long" />
+      <xs:element minOccurs="0" name="MasterProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OAUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldSchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="PJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="POrgPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="PUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentAssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="PlanCreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="PlanStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="PlanUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="PlanUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:long" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="SchoolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="StuendtCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectGroupID" type="xs:long" />
+      <xs:element minOccurs="0" name="SubjectGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOrgPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachHours" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TeacherActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherJobID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherPatternID" type="xs:int" />
+      <xs:element minOccurs="0" name="TeacherPatternName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherSchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherSubjectGroupID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherSubjectGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherType" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeachingDifficulties" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachingFocus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachingSchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeachingSchoolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachingVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignCourseDataContract" nillable="true" type="tns:AssignCourseDataContract" />
+  <xs:complexType name="AssignCourseSeachConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsignStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="AssignConsumeStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="CancelType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConsultatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseType" type="xs:int" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsContain" type="xs:int" />
+      <xs:element minOccurs="0" name="ManagerUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="PUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="SchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentOrTeacher" type="xs:int" />
+      <xs:element minOccurs="0" name="StudentPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="TeacherID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherType" type="xs:long" />
+      <xs:element minOccurs="0" name="TimeFlg" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignCourseSeachConditionsDataContract" nillable="true" type="tns:AssignCourseSeachConditionsDataContract" />
+  <xs:complexType name="CopyClassTableConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerBrowser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerBrowserPlatform" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerBrowserVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerIPAdd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerPCName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NewStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OldEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OldStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="PUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcesserID" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcesserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherJobPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeachingSchoolID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeachingSchoolName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CopyClassTableConditionsDataContract" nillable="true" type="tns:CopyClassTableConditionsDataContract" />
+  <xs:complexType name="ArrayOfCancelReasonConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CancelReasonConditionsDataContract" nillable="true" type="tns:CancelReasonConditionsDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCancelReasonConditionsDataContract" nillable="true" type="tns:ArrayOfCancelReasonConditionsDataContract" />
+  <xs:complexType name="CancelReasonConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelReasonConditionsDataContract" nillable="true" type="tns:CancelReasonConditionsDataContract" />
+  <xs:complexType name="ArrayOfTemporaryAssignConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TemporaryAssignConditionsDataContract" nillable="true" type="tns:TemporaryAssignConditionsDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTemporaryAssignConditionsDataContract" nillable="true" type="tns:ArrayOfTemporaryAssignConditionsDataContract" />
+  <xs:complexType name="TemporaryAssignConditionsDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemporaryAssignConditionsDataContract" nillable="true" type="tns:TemporaryAssignConditionsDataContract" />
+  <xs:complexType name="ArrayOfTeachTimeDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeachTimeDataContract" nillable="true" type="tns:TeachTimeDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTeachTimeDataContract" nillable="true" type="tns:ArrayOfTeachTimeDataContract" />
+  <xs:complexType name="TeachTimeDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeachTimeDataContract" nillable="true" type="tns:TeachTimeDataContract" />
+  <xs:complexType name="PUserInfoDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="PUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUserPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TOrgPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PUserInfoDataContract" nillable="true" type="tns:PUserInfoDataContract" />
+  <xs:complexType name="StudentClassHourDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrMonthConfirmClassNum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrMonthHaveClassNum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentClassHourDataContract" nillable="true" type="tns:StudentClassHourDataContract" />
+  <xs:complexType name="XC_AssignCourseSeachConditionsDataContract">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AsignStatus" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentID" type="xs:long" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentUserID" type="xs:long" />
+      <xs:element minOccurs="0" name="TeacherID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XC_AssignCourseSeachConditionsDataContract" nillable="true" type="tns:XC_AssignCourseSeachConditionsDataContract" />
+  <xs:complexType name="ArrayOfConflictInfoDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConflictInfoDataContract" nillable="true" type="tns:ConflictInfoDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConflictInfoDataContract" nillable="true" type="tns:ArrayOfConflictInfoDataContract" />
+  <xs:complexType name="ConflictInfoDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignCourseEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignCourseID" type="xs:long" />
+      <xs:element minOccurs="0" name="AssignCourseStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ConflictID" type="xs:long" />
+      <xs:element minOccurs="0" name="ConflictType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DelTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsDel" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="OPenrtorPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="OperaeTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OperatorID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentPassportID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConflictInfoDataContract" nillable="true" type="tns:ConflictInfoDataContract" />
+</xs:schema>

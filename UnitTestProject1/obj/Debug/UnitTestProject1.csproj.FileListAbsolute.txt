@@ -1,0 +1,11 @@
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\hibernate.cfg.xml
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\NHibernate.dll
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\NHibernateUtility.dll
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\nunit.framework.dll
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\Iesi.Collections.dll
+E:\project\PadSYNC\UnitTestProject1\bin\Debug\NHibernateUtility.pdb
+E:\project\PadSYNC\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+E:\project\PadSYNC\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+E:\project\PadSYNC\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

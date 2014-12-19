@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="62404835-875b-4a79-ad3f-a4005af0ff44" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://course.xueda.com/WCF/AssignCourseWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AssignCourseWCFService.xsd" MetadataType="Schema" ID="a67bd459-2253-4c03-bf78-af1b5baa1e97" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd5" />
+    <MetadataFile FileName="AssignCourseWCFService.wsdl" MetadataType="Wsdl" ID="2c041506-af75-4f39-855c-57f3083d7b73" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?wsdl" />
+    <MetadataFile FileName="AssignCourseWCFService1.xsd" MetadataType="Schema" ID="6181824e-6054-4430-9e2b-9d8704d18680" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd7" />
+    <MetadataFile FileName="AssignCourseWCFService2.xsd" MetadataType="Schema" ID="52f1f82d-764a-4447-a06f-31f1947bf345" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AssignCourseWCFService.disco" MetadataType="Disco" ID="3c12cb42-53b7-4f4d-9853-75325ccc44b0" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?disco" />
+    <MetadataFile FileName="AssignCourseWCFService3.xsd" MetadataType="Schema" ID="add54d15-cec5-4378-befc-8982ffe2af6e" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AssignCourseWCFService4.xsd" MetadataType="Schema" ID="13c97dab-f128-4a4c-b31d-2bb94c1c6214" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AssignCourseWCFService5.xsd" MetadataType="Schema" ID="4535d91c-289d-4a61-9608-2705a50eaac4" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AssignCourseWCFService6.xsd" MetadataType="Schema" ID="28bae483-e3cb-4b20-9047-fd73911b3458" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd6" />
+    <MetadataFile FileName="AssignCourseWCFService7.xsd" MetadataType="Schema" ID="9f9e10f9-79aa-46e6-8e9c-02927bcfa863" SourceId="1" SourceUrl="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

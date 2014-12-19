@@ -1,0 +1,10 @@
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\NHibernateUtility.dll
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\NHibernateUtility.pdb
+E:\project\PadSYNC\NHibernateUtility\obj\Debug\NHibernateUtility.csprojResolveAssemblyReference.cache
+E:\project\PadSYNC\NHibernateUtility\obj\Debug\NHibernateUtility.dll
+E:\project\PadSYNC\NHibernateUtility\obj\Debug\NHibernateUtility.pdb
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\hibernate.cfg.xml
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\NHibernate.dll
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\nunit.framework.dll
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\System.Data.SqlServerCe.dll
+E:\project\PadSYNC\NHibernateUtility\bin\Debug\Iesi.Collections.dll

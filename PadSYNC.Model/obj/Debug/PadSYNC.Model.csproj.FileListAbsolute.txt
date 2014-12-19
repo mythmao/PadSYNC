@@ -1,0 +1,6 @@
+E:\project\PadSYNC\PadSYNC.Model\bin\Debug\PadSYNC.Model.dll
+E:\project\PadSYNC\PadSYNC.Model\bin\Debug\PadSYNC.Model.pdb
+E:\project\PadSYNC\PadSYNC.Model\obj\Debug\PadSYNC.Model.dll
+E:\project\PadSYNC\PadSYNC.Model\obj\Debug\PadSYNC.Model.pdb
+E:\project\PadSYNC\PadSYNC.Model\bin\Debug\PadSYNC.Model.dll.config
+E:\project\PadSYNC\PadSYNC.Model\obj\Debug\PadSYNC.Model.csprojResolveAssemblyReference.cache

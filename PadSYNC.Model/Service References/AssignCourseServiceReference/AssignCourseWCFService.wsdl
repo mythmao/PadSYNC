@@ -1,0 +1,2354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AssignCourseWCFService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WCF.IAssignCourseWCFService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cloud.Course" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Cloud.Configuration" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Cloud" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Cloud.Course.WCFService.Contracts" />
+      <xsd:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Cloud.BackOffice.Common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAssignCourseService_SelectSubjectBy_TeacherUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSubjectBy_TeacherUserID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectSubjectBy_TeacherUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSubjectBy_TeacherUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectSubjectBy_TeacherUserIDNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSubjectBy_TeacherUserIDNew" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectSubjectBy_TeacherUserIDNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSubjectBy_TeacherUserIDNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlanGetSubject_GradeBystudentID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlanGetSubject_GradeBystudentID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlanGetSubject_GradeBystudentID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlanGetSubject_GradeBystudentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlanGetSubject_GradeBystudentIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlanGetSubject_GradeBystudentIDs" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlanGetSubject_GradeBystudentIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlanGetSubject_GradeBystudentIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_SelectCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_SelectCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_SelectCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_SelectCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_SelectCourseNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_SelectCourseNew" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_SelectCourseNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_SelectCourseNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_SelectCourseCurrMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_SelectCourseCurrMonth" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_SelectCourseCurrMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_SelectCourseCurrMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Mircro_SelectCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:Mircro_SelectCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Mircro_SelectCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Mircro_SelectCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectTeacherAppreciationBy_AssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTeacherAppreciationBy_AssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectTeacherAppreciationBy_AssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTeacherAppreciationBy_AssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckCourseService_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCourseService" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckCourseService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCourseServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetCompanyCourseReceive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyCourseReceive" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetCompanyCourseReceive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyCourseReceiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_NEWClassGroup_CreateClassTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:NEWClassGroup_CreateClassTime" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_NEWClassGroup_CreateClassTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NEWClassGroup_CreateClassTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetMaxTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxTime" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetMaxTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_ConfirmCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_ConfirmCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAssignCourseBy_StudentIDs_Status" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAssignCourseBy_StudentIDs_StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SavePretreatmentTemporaryAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePretreatmentTemporaryAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SavePretreatmentTemporaryAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePretreatmentTemporaryAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_UpdateTeacherAppreciationPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeacherAppreciationPoint" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_UpdateTeacherAppreciationPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeacherAppreciationPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_AppreciationID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_AppreciationID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_AppreciationID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_AppreciationIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_Point_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAssignCourseBy_StudentIDs_Status_Point" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_Point_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAssignCourseBy_StudentIDs_Status_PointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectMyAssignFiliter_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMyAssignFiliter" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectMyAssignFiliter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMyAssignFiliterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetMyAssignHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyAssignHours" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetMyAssignHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyAssignHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveKnowledgePointAppreciation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveKnowledgePointAppreciation" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveKnowledgePointAppreciation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveKnowledgePointAppreciationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteByAssignIDNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByAssignIDNew" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteByAssignIDNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteByAssignIDNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_AssignIDNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_AssignIDNew" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_AssignIDNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_AssignIDNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectTeachingAccessoryBy_AssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTeachingAccessoryBy_AssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectTeachingAccessoryBy_AssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTeachingAccessoryBy_AssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTeachingAccessory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeachingAccessory" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTeachingAccessory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeachingAccessoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTeachingAccessoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeachingAccessoryList" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTeachingAccessoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeachingAccessoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteTeachingAccessoryByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTeachingAccessoryByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteTeachingAccessoryByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTeachingAccessoryByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckPlanStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPlanStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckPlanStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPlanStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteBy_Assign_PointID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBy_Assign_PointID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteBy_Assign_PointID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBy_Assign_PointIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_Assign_PointID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_Assign_PointID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_Assign_PointID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_Assign_PointIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeachingVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachingVersion" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeachingVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachingVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveCourseIncomeVirtual_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCourseIncomeVirtual" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveCourseIncomeVirtual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCourseIncomeVirtualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_GetTeacherCourseTimes_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_GetTeacherCourseTimes" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CUS_GetTeacherCourseTimes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUS_GetTeacherCourseTimesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_TempPlanSave_save_InputMessage">
+    <wsdl:part name="parameters" element="tns:TempPlanSave_save" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_TempPlanSave_save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TempPlanSave_saveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempKnowledgePoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempKnowledgePoint" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempKnowledgePoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempKnowledgePointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempKnowledgePointList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempKnowledgePointList" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempKnowledgePointList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempKnowledgePointListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteTempKnowledgePointByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTempKnowledgePointByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteTempKnowledgePointByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTempKnowledgePointByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempTeachingAccessory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempTeachingAccessory" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempTeachingAccessory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempTeachingAccessoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempTeachingAccessoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempTeachingAccessoryList" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SaveTempTeachingAccessoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTempTeachingAccessoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectTempTeachingAccessoryListByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTempTeachingAccessoryListByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectTempTeachingAccessoryListByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectTempTeachingAccessoryListByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteTempTeachingAccessoryByAssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTempTeachingAccessoryByAssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteTempTeachingAccessoryByAssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTempTeachingAccessoryByAssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_SelectCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_SelectCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_SelectCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_SelectCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_SelectCourse_ByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_SelectCourse_ByID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_SelectCourse_ByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_SelectCourse_ByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlanGetSubject_Grade_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlanGetSubject_Grade" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlanGetSubject_Grade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlanGetSubject_GradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_SelectCourse_ByStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_SelectCourse_ByStudent" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_SelectCourse_ByStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_SelectCourse_ByStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_StudentID_BY_Teacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_StudentID_BY_Teacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XPlan_StudentID_BY_Teacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPlan_StudentID_BY_TeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTime_All_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTime_All" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTime_All_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTime_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListByIDForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListByIDForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListByIDForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListByIDForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleAssignCourseForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancleAssignCourseForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleAssignCourseForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancleAssignCourseForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_TemporaryAssignCourseForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:TemporaryAssignCourseForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_TemporaryAssignCourseForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TemporaryAssignCourseForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectFreeTeacherForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFreeTeacherForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectFreeTeacherForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFreeTeacherForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeAllForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeAllForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeAllForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeAllForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeTeacherForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeTeacherForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeTeacherForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeTeacherForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTime_AllForArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTime_AllForArr" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTime_AllForArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTime_AllForArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectAssignCourseListByArgs_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAssignCourseListByArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectAssignCourseListByArgs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAssignCourseListByArgsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTime" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_IsSomeOneConfirm_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSomeOneConfirm" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_IsSomeOneConfirm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSomeOneConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddOneTeacherAssignCourseRetErrowString_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOneTeacherAssignCourseRetErrowString" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddOneTeacherAssignCourseRetErrowString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOneTeacherAssignCourseRetErrowStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddStudentAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStudentAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddStudentAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStudentAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_CheckTemporaryAssignCourseTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_CheckTemporaryAssignCourseTime" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_CheckTemporaryAssignCourseTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_CheckTemporaryAssignCourseTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_ChangeManagerRefishCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeManagerRefishCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_ChangeManagerRefishCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeManagerRefishCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleClassGroupAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancleClassGroupAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleClassGroupAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancleClassGroupAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_IsHaveClassGroupStudentCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_IsHaveClassGroupStudentCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_IsHaveClassGroupStudentCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_IsHaveClassGroupStudentCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_CancleTeacherCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_CancleTeacherCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_CancleTeacherCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_CancleTeacherCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_IsClassGroupStudentCourse_AllCancle_InputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_IsClassGroupStudentCourse_AllCancle" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_BZ_IsClassGroupStudentCourse_AllCancle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BZ_IsClassGroupStudentCourse_AllCancleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckProductIsAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProductIsAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckProductIsAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProductIsAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckProductIsAvailable_ForMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProductIsAvailable_ForMaster" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckProductIsAvailable_ForMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProductIsAvailable_ForMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckAssignCourseTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAssignCourseTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckAssignCourseTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAssignCourseTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckStudentCoursed_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStudentCoursed" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckStudentCoursed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStudentCoursedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_returnSS_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnSS" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_returnSS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnSSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignForStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignForStaff" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignForStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignForStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignForStaffPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignForStaffPrint" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignForStaffPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignForStaffPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteAssignCourseByStudentAssignCourseID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAssignCourseByStudentAssignCourseID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_DeleteAssignCourseByStudentAssignCourseID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAssignCourseByStudentAssignCourseIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetLastStartTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastStartTime" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetLastStartTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastStartTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SetAbnormal_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetAbnormal" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SetAbnormal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetAbnormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_InsertTeacherAppreciation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTeacherAppreciation" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_InsertTeacherAppreciation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTeacherAppreciationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_InsertTeacherAppreciationNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTeacherAppreciationNew" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_InsertTeacherAppreciationNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTeacherAppreciationNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_InsertTeacherAppreciationPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTeacherAppreciationPoint" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_InsertTeacherAppreciationPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTeacherAppreciationPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeacherAppreciation_ByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherAppreciation_ByID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeacherAppreciation_ByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherAppreciation_ByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_AssignID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_AssignID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListBy_AssignID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListBy_AssignIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Select_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_Select_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectWithIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectWithIdentity" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectWithIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectWithIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckExists" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectFreeTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFreeTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectFreeTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFreeTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetAllReadyClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllReadyClass" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetAllReadyClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllReadyClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleCourseForTeacherChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancleCourseForTeacherChange" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleCourseForTeacherChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancleCourseForTeacherChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_UpdateClassAdviser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClassAdviser" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_UpdateClassAdviser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClassAdviserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetOppositionAssignCourseTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOppositionAssignCourseTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetOppositionAssignCourseTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOppositionAssignCourseTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddNewAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddNewAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddNewAssignCourseRetErrowType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAssignCourseRetErrowType" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddNewAssignCourseRetErrowType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAssignCourseRetErrowTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddNewAssignCourseRetErrowString_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAssignCourseRetErrowString" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_AddNewAssignCourseRetErrowString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAssignCourseRetErrowStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListByID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectList" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssign_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssign" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetCurrMonthClassNumByStudentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrMonthClassNumByStudentId" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetCurrMonthClassNumByStudentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrMonthClassNumByStudentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssign_ByParentID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssign_ByParentID" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssign_ByParentID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssign_ByParentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignPrint" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignFiliter_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignFiliter" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignFiliter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignFiliterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignFiliterPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignFiliterPrint" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectListAssignFiliterPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectListAssignFiliterPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XC_SelectListAssign_Student_OR_Teacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:XC_SelectListAssign_Student_OR_Teacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_XC_SelectListAssign_Student_OR_Teacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XC_SelectListAssign_Student_OR_TeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeacherHoursFiliter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherHoursFiliter" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeacherHoursFiliter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherHoursFiliterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeacherHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherHours" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_GetTeacherHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTable" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableNew" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableNew_For_PPTS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableNew_For_PPTS" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableNew_For_PPTS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableNew_For_PPTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CopyClassTableTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyClassTableTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_ConfirmAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_ConfirmAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancleAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancleAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_TemporaryAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:TemporaryAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_TemporaryAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TemporaryAssignCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_FirstCourseConfirm_InputMessage">
+    <wsdl:part name="parameters" element="tns:FirstCourseConfirm" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_FirstCourseConfirm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FirstCourseConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancleCourse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CancleCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancleCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectConflictInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectConflictInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_SelectConflictInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectConflictInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeAll" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IAssignCourseService_CheckSimpleResourceTimeTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSimpleResourceTimeTeacherResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAssignCourseService">
+    <wsdl:operation name="SelectSubjectBy_TeacherUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectSubjectBy_TeacherUserID" message="tns:IAssignCourseService_SelectSubjectBy_TeacherUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectSubjectBy_TeacherUserIDResponse" message="tns:IAssignCourseService_SelectSubjectBy_TeacherUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubjectBy_TeacherUserIDNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectSubjectBy_TeacherUserIDNew" message="tns:IAssignCourseService_SelectSubjectBy_TeacherUserIDNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectSubjectBy_TeacherUserIDNewResponse" message="tns:IAssignCourseService_SelectSubjectBy_TeacherUserIDNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlanGetSubject_GradeBystudentID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeBystudentID" message="tns:IAssignCourseService_XPlanGetSubject_GradeBystudentID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeBystudentIDResponse" message="tns:IAssignCourseService_XPlanGetSubject_GradeBystudentID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlanGetSubject_GradeBystudentIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeBystudentIDs" message="tns:IAssignCourseService_XPlanGetSubject_GradeBystudentIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeBystudentIDsResponse" message="tns:IAssignCourseService_XPlanGetSubject_GradeBystudentIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUS_SelectCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_SelectCourse" message="tns:IAssignCourseService_CUS_SelectCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_SelectCourseResponse" message="tns:IAssignCourseService_CUS_SelectCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUS_SelectCourseNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_SelectCourseNew" message="tns:IAssignCourseService_CUS_SelectCourseNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_SelectCourseNewResponse" message="tns:IAssignCourseService_CUS_SelectCourseNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUS_SelectCourseCurrMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_SelectCourseCurrMonth" message="tns:IAssignCourseService_CUS_SelectCourseCurrMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_SelectCourseCurrMonthResponse" message="tns:IAssignCourseService_CUS_SelectCourseCurrMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Mircro_SelectCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/Mircro_SelectCourse" message="tns:IAssignCourseService_Mircro_SelectCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/Mircro_SelectCourseResponse" message="tns:IAssignCourseService_Mircro_SelectCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeacherAppreciationBy_AssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectTeacherAppreciationBy_AssignID" message="tns:IAssignCourseService_SelectTeacherAppreciationBy_AssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectTeacherAppreciationBy_AssignIDResponse" message="tns:IAssignCourseService_SelectTeacherAppreciationBy_AssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCourseService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckCourseService" message="tns:IAssignCourseService_CheckCourseService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckCourseServiceResponse" message="tns:IAssignCourseService_CheckCourseService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCourseReceive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetCompanyCourseReceive" message="tns:IAssignCourseService_GetCompanyCourseReceive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetCompanyCourseReceiveResponse" message="tns:IAssignCourseService_GetCompanyCourseReceive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NEWClassGroup_CreateClassTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/NEWClassGroup_CreateClassTime" message="tns:IAssignCourseService_NEWClassGroup_CreateClassTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/NEWClassGroup_CreateClassTimeResponse" message="tns:IAssignCourseService_NEWClassGroup_CreateClassTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetMaxTime" message="tns:IAssignCourseService_GetMaxTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetMaxTimeResponse" message="tns:IAssignCourseService_GetMaxTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/ConfirmCourse" message="tns:IAssignCourseService_ConfirmCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/ConfirmCourseResponse" message="tns:IAssignCourseService_ConfirmCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAssignCourseBy_StudentIDs_Status">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectAssignCourseBy_StudentIDs_Status" message="tns:IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectAssignCourseBy_StudentIDs_StatusResponse" message="tns:IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePretreatmentTemporaryAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SavePretreatmentTemporaryAssignCourse" message="tns:IAssignCourseService_SavePretreatmentTemporaryAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SavePretreatmentTemporaryAssignCourseResponse" message="tns:IAssignCourseService_SavePretreatmentTemporaryAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeacherAppreciationPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/UpdateTeacherAppreciationPoint" message="tns:IAssignCourseService_UpdateTeacherAppreciationPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/UpdateTeacherAppreciationPointResponse" message="tns:IAssignCourseService_UpdateTeacherAppreciationPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteByAssignID" message="tns:IAssignCourseService_DeleteByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteByAssignIDResponse" message="tns:IAssignCourseService_DeleteByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_AppreciationID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_AppreciationID" message="tns:IAssignCourseService_SelectListBy_AppreciationID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_AppreciationIDResponse" message="tns:IAssignCourseService_SelectListBy_AppreciationID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAssignCourseBy_StudentIDs_Status_Point">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectAssignCourseBy_StudentIDs_Status_Point" message="tns:IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_Point_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectAssignCourseBy_StudentIDs_Status_PointResponse" message="tns:IAssignCourseService_SelectAssignCourseBy_StudentIDs_Status_Point_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMyAssignFiliter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectMyAssignFiliter" message="tns:IAssignCourseService_SelectMyAssignFiliter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectMyAssignFiliterResponse" message="tns:IAssignCourseService_SelectMyAssignFiliter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyAssignHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetMyAssignHours" message="tns:IAssignCourseService_GetMyAssignHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetMyAssignHoursResponse" message="tns:IAssignCourseService_GetMyAssignHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveKnowledgePointAppreciation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveKnowledgePointAppreciation" message="tns:IAssignCourseService_SaveKnowledgePointAppreciation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveKnowledgePointAppreciationResponse" message="tns:IAssignCourseService_SaveKnowledgePointAppreciation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByAssignIDNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteByAssignIDNew" message="tns:IAssignCourseService_DeleteByAssignIDNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteByAssignIDNewResponse" message="tns:IAssignCourseService_DeleteByAssignIDNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_AssignIDNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_AssignIDNew" message="tns:IAssignCourseService_SelectListBy_AssignIDNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_AssignIDNewResponse" message="tns:IAssignCourseService_SelectListBy_AssignIDNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeachingAccessoryBy_AssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectTeachingAccessoryBy_AssignID" message="tns:IAssignCourseService_SelectTeachingAccessoryBy_AssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectTeachingAccessoryBy_AssignIDResponse" message="tns:IAssignCourseService_SelectTeachingAccessoryBy_AssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTeachingAccessory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTeachingAccessory" message="tns:IAssignCourseService_SaveTeachingAccessory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTeachingAccessoryResponse" message="tns:IAssignCourseService_SaveTeachingAccessory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTeachingAccessoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTeachingAccessoryList" message="tns:IAssignCourseService_SaveTeachingAccessoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTeachingAccessoryListResponse" message="tns:IAssignCourseService_SaveTeachingAccessoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTeachingAccessoryByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteTeachingAccessoryByAssignID" message="tns:IAssignCourseService_DeleteTeachingAccessoryByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteTeachingAccessoryByAssignIDResponse" message="tns:IAssignCourseService_DeleteTeachingAccessoryByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlanStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckPlanStatus" message="tns:IAssignCourseService_CheckPlanStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckPlanStatusResponse" message="tns:IAssignCourseService_CheckPlanStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBy_Assign_PointID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteBy_Assign_PointID" message="tns:IAssignCourseService_DeleteBy_Assign_PointID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteBy_Assign_PointIDResponse" message="tns:IAssignCourseService_DeleteBy_Assign_PointID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_Assign_PointID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_Assign_PointID" message="tns:IAssignCourseService_SelectListBy_Assign_PointID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_Assign_PointIDResponse" message="tns:IAssignCourseService_SelectListBy_Assign_PointID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachingVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeachingVersion" message="tns:IAssignCourseService_GetTeachingVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeachingVersionResponse" message="tns:IAssignCourseService_GetTeachingVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCourseIncomeVirtual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveCourseIncomeVirtual" message="tns:IAssignCourseService_SaveCourseIncomeVirtual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveCourseIncomeVirtualResponse" message="tns:IAssignCourseService_SaveCourseIncomeVirtual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUS_GetTeacherCourseTimes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_GetTeacherCourseTimes" message="tns:IAssignCourseService_CUS_GetTeacherCourseTimes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CUS_GetTeacherCourseTimesResponse" message="tns:IAssignCourseService_CUS_GetTeacherCourseTimes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectByAssignID" message="tns:IAssignCourseService_SelectByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectByAssignIDResponse" message="tns:IAssignCourseService_SelectByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TempPlanSave_save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/TempPlanSave_save" message="tns:IAssignCourseService_TempPlanSave_save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/TempPlanSave_saveResponse" message="tns:IAssignCourseService_TempPlanSave_save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempKnowledgePoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempKnowledgePoint" message="tns:IAssignCourseService_SaveTempKnowledgePoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempKnowledgePointResponse" message="tns:IAssignCourseService_SaveTempKnowledgePoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempKnowledgePointList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempKnowledgePointList" message="tns:IAssignCourseService_SaveTempKnowledgePointList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempKnowledgePointListResponse" message="tns:IAssignCourseService_SaveTempKnowledgePointList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListByAssignID" message="tns:IAssignCourseService_SelectListByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListByAssignIDResponse" message="tns:IAssignCourseService_SelectListByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTempKnowledgePointByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteTempKnowledgePointByAssignID" message="tns:IAssignCourseService_DeleteTempKnowledgePointByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteTempKnowledgePointByAssignIDResponse" message="tns:IAssignCourseService_DeleteTempKnowledgePointByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempTeachingAccessory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempTeachingAccessory" message="tns:IAssignCourseService_SaveTempTeachingAccessory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempTeachingAccessoryResponse" message="tns:IAssignCourseService_SaveTempTeachingAccessory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempTeachingAccessoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempTeachingAccessoryList" message="tns:IAssignCourseService_SaveTempTeachingAccessoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveTempTeachingAccessoryListResponse" message="tns:IAssignCourseService_SaveTempTeachingAccessoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTempTeachingAccessoryListByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectTempTeachingAccessoryListByAssignID" message="tns:IAssignCourseService_SelectTempTeachingAccessoryListByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectTempTeachingAccessoryListByAssignIDResponse" message="tns:IAssignCourseService_SelectTempTeachingAccessoryListByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTempTeachingAccessoryByAssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteTempTeachingAccessoryByAssignID" message="tns:IAssignCourseService_DeleteTempTeachingAccessoryByAssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteTempTeachingAccessoryByAssignIDResponse" message="tns:IAssignCourseService_DeleteTempTeachingAccessoryByAssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_SelectCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse" message="tns:IAssignCourseService_XPlan_SelectCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_SelectCourseResponse" message="tns:IAssignCourseService_XPlan_SelectCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_SelectCourse_ByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse_ByID" message="tns:IAssignCourseService_XPlan_SelectCourse_ByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse_ByIDResponse" message="tns:IAssignCourseService_XPlan_SelectCourse_ByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlanGetSubject_Grade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlanGetSubject_Grade" message="tns:IAssignCourseService_XPlanGetSubject_Grade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeResponse" message="tns:IAssignCourseService_XPlanGetSubject_Grade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_SelectCourse_ByStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse_ByStudent" message="tns:IAssignCourseService_XPlan_SelectCourse_ByStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse_ByStudentResponse" message="tns:IAssignCourseService_XPlan_SelectCourse_ByStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_StudentID_BY_Teacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_StudentID_BY_Teacher" message="tns:IAssignCourseService_XPlan_StudentID_BY_Teacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XPlan_StudentID_BY_TeacherResponse" message="tns:IAssignCourseService_XPlan_StudentID_BY_Teacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTime_All">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime_All" message="tns:IAssignCourseService_CheckSimpleResourceTime_All_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime_AllResponse" message="tns:IAssignCourseService_CheckSimpleResourceTime_All_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListByIDForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListByIDForArr" message="tns:IAssignCourseService_SelectListByIDForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListByIDForArrResponse" message="tns:IAssignCourseService_SelectListByIDForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListForArr" message="tns:IAssignCourseService_SelectListForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListForArrResponse" message="tns:IAssignCourseService_SelectListForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableForArr" message="tns:IAssignCourseService_CopyClassTableForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableForArrResponse" message="tns:IAssignCourseService_CopyClassTableForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancleAssignCourseForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CancleAssignCourseForArr" message="tns:IAssignCourseService_CancleAssignCourseForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CancleAssignCourseForArrResponse" message="tns:IAssignCourseService_CancleAssignCourseForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryAssignCourseForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/TemporaryAssignCourseForArr" message="tns:IAssignCourseService_TemporaryAssignCourseForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/TemporaryAssignCourseForArrResponse" message="tns:IAssignCourseService_TemporaryAssignCourseForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFreeTeacherForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectFreeTeacherForArr" message="tns:IAssignCourseService_SelectFreeTeacherForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectFreeTeacherForArrResponse" message="tns:IAssignCourseService_SelectFreeTeacherForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeAllForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeAllForArr" message="tns:IAssignCourseService_CheckSimpleResourceTimeAllForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeAllForArrResponse" message="tns:IAssignCourseService_CheckSimpleResourceTimeAllForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeTeacherForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeTeacherForArr" message="tns:IAssignCourseService_CheckSimpleResourceTimeTeacherForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeTeacherForArrResponse" message="tns:IAssignCourseService_CheckSimpleResourceTimeTeacherForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTime_AllForArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime_AllForArr" message="tns:IAssignCourseService_CheckSimpleResourceTime_AllForArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime_AllForArrResponse" message="tns:IAssignCourseService_CheckSimpleResourceTime_AllForArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAssignCourseListByArgs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectAssignCourseListByArgs" message="tns:IAssignCourseService_SelectAssignCourseListByArgs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectAssignCourseListByArgsResponse" message="tns:IAssignCourseService_SelectAssignCourseListByArgs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime" message="tns:IAssignCourseService_CheckSimpleResourceTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeResponse" message="tns:IAssignCourseService_CheckSimpleResourceTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSomeOneConfirm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/IsSomeOneConfirm" message="tns:IAssignCourseService_IsSomeOneConfirm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/IsSomeOneConfirmResponse" message="tns:IAssignCourseService_IsSomeOneConfirm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneTeacherAssignCourseRetErrowString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/AddOneTeacherAssignCourseRetErrowString" message="tns:IAssignCourseService_AddOneTeacherAssignCourseRetErrowString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/AddOneTeacherAssignCourseRetErrowStringResponse" message="tns:IAssignCourseService_AddOneTeacherAssignCourseRetErrowString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStudentAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/AddStudentAssignCourse" message="tns:IAssignCourseService_AddStudentAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/AddStudentAssignCourseResponse" message="tns:IAssignCourseService_AddStudentAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BZ_CheckTemporaryAssignCourseTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_CheckTemporaryAssignCourseTime" message="tns:IAssignCourseService_BZ_CheckTemporaryAssignCourseTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_CheckTemporaryAssignCourseTimeResponse" message="tns:IAssignCourseService_BZ_CheckTemporaryAssignCourseTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeManagerRefishCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/ChangeManagerRefishCourse" message="tns:IAssignCourseService_ChangeManagerRefishCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/ChangeManagerRefishCourseResponse" message="tns:IAssignCourseService_ChangeManagerRefishCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancleClassGroupAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CancleClassGroupAssignCourse" message="tns:IAssignCourseService_CancleClassGroupAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CancleClassGroupAssignCourseResponse" message="tns:IAssignCourseService_CancleClassGroupAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BZ_IsHaveClassGroupStudentCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_IsHaveClassGroupStudentCourse" message="tns:IAssignCourseService_BZ_IsHaveClassGroupStudentCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_IsHaveClassGroupStudentCourseResponse" message="tns:IAssignCourseService_BZ_IsHaveClassGroupStudentCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BZ_CancleTeacherCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_CancleTeacherCourse" message="tns:IAssignCourseService_BZ_CancleTeacherCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_CancleTeacherCourseResponse" message="tns:IAssignCourseService_BZ_CancleTeacherCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BZ_IsClassGroupStudentCourse_AllCancle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_IsClassGroupStudentCourse_AllCancle" message="tns:IAssignCourseService_BZ_IsClassGroupStudentCourse_AllCancle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/BZ_IsClassGroupStudentCourse_AllCancleResponse" message="tns:IAssignCourseService_BZ_IsClassGroupStudentCourse_AllCancle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductIsAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckProductIsAvailable" message="tns:IAssignCourseService_CheckProductIsAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckProductIsAvailableResponse" message="tns:IAssignCourseService_CheckProductIsAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductIsAvailable_ForMaster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckProductIsAvailable_ForMaster" message="tns:IAssignCourseService_CheckProductIsAvailable_ForMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckProductIsAvailable_ForMasterResponse" message="tns:IAssignCourseService_CheckProductIsAvailable_ForMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAssignCourseTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckAssignCourseTeacher" message="tns:IAssignCourseService_CheckAssignCourseTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckAssignCourseTeacherResponse" message="tns:IAssignCourseService_CheckAssignCourseTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStudentCoursed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckStudentCoursed" message="tns:IAssignCourseService_CheckStudentCoursed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckStudentCoursedResponse" message="tns:IAssignCourseService_CheckStudentCoursed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returnSS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/returnSS" message="tns:IAssignCourseService_returnSS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/returnSSResponse" message="tns:IAssignCourseService_returnSS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignForStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignForStaff" message="tns:IAssignCourseService_SelectListAssignForStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignForStaffResponse" message="tns:IAssignCourseService_SelectListAssignForStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignForStaffPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignForStaffPrint" message="tns:IAssignCourseService_SelectListAssignForStaffPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignForStaffPrintResponse" message="tns:IAssignCourseService_SelectListAssignForStaffPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAssignCourseByStudentAssignCourseID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteAssignCourseByStudentAssignCourseID" message="tns:IAssignCourseService_DeleteAssignCourseByStudentAssignCourseID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteAssignCourseByStudentAssignCourseIDResponse" message="tns:IAssignCourseService_DeleteAssignCourseByStudentAssignCourseID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastStartTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetLastStartTime" message="tns:IAssignCourseService_GetLastStartTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetLastStartTimeResponse" message="tns:IAssignCourseService_GetLastStartTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAbnormal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SetAbnormal" message="tns:IAssignCourseService_SetAbnormal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SetAbnormalResponse" message="tns:IAssignCourseService_SetAbnormal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTeacherAppreciation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciation" message="tns:IAssignCourseService_InsertTeacherAppreciation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationResponse" message="tns:IAssignCourseService_InsertTeacherAppreciation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTeacherAppreciationNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationNew" message="tns:IAssignCourseService_InsertTeacherAppreciationNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationNewResponse" message="tns:IAssignCourseService_InsertTeacherAppreciationNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTeacherAppreciationPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationPoint" message="tns:IAssignCourseService_InsertTeacherAppreciationPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationPointResponse" message="tns:IAssignCourseService_InsertTeacherAppreciationPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherAppreciation_ByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeacherAppreciation_ByID" message="tns:IAssignCourseService_GetTeacherAppreciation_ByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeacherAppreciation_ByIDResponse" message="tns:IAssignCourseService_GetTeacherAppreciation_ByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_AssignID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_AssignID" message="tns:IAssignCourseService_SelectListBy_AssignID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListBy_AssignIDResponse" message="tns:IAssignCourseService_SelectListBy_AssignID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/Save" message="tns:IAssignCourseService_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SaveResponse" message="tns:IAssignCourseService_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/Delete" message="tns:IAssignCourseService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/DeleteResponse" message="tns:IAssignCourseService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/Select" message="tns:IAssignCourseService_Select_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectResponse" message="tns:IAssignCourseService_Select_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectWithIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectWithIdentity" message="tns:IAssignCourseService_SelectWithIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectWithIdentityResponse" message="tns:IAssignCourseService_SelectWithIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckExists" message="tns:IAssignCourseService_CheckExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckExistsResponse" message="tns:IAssignCourseService_CheckExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFreeTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectFreeTeacher" message="tns:IAssignCourseService_SelectFreeTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectFreeTeacherResponse" message="tns:IAssignCourseService_SelectFreeTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReadyClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetAllReadyClass" message="tns:IAssignCourseService_GetAllReadyClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetAllReadyClassResponse" message="tns:IAssignCourseService_GetAllReadyClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancleCourseForTeacherChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CancleCourseForTeacherChange" message="tns:IAssignCourseService_CancleCourseForTeacherChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CancleCourseForTeacherChangeResponse" message="tns:IAssignCourseService_CancleCourseForTeacherChange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClassAdviser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/UpdateClassAdviser" message="tns:IAssignCourseService_UpdateClassAdviser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/UpdateClassAdviserResponse" message="tns:IAssignCourseService_UpdateClassAdviser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOppositionAssignCourseTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetOppositionAssignCourseTeacher" message="tns:IAssignCourseService_GetOppositionAssignCourseTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetOppositionAssignCourseTeacherResponse" message="tns:IAssignCourseService_GetOppositionAssignCourseTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/AddNewAssignCourse" message="tns:IAssignCourseService_AddNewAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/AddNewAssignCourseResponse" message="tns:IAssignCourseService_AddNewAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAssignCourseRetErrowType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/AddNewAssignCourseRetErrowType" message="tns:IAssignCourseService_AddNewAssignCourseRetErrowType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/AddNewAssignCourseRetErrowTypeResponse" message="tns:IAssignCourseService_AddNewAssignCourseRetErrowType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAssignCourseRetErrowString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/AddNewAssignCourseRetErrowString" message="tns:IAssignCourseService_AddNewAssignCourseRetErrowString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/AddNewAssignCourseRetErrowStringResponse" message="tns:IAssignCourseService_AddNewAssignCourseRetErrowString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListByID" message="tns:IAssignCourseService_SelectListByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListByIDResponse" message="tns:IAssignCourseService_SelectListByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectList" message="tns:IAssignCourseService_SelectList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListResponse" message="tns:IAssignCourseService_SelectList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssign" message="tns:IAssignCourseService_SelectListAssign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignResponse" message="tns:IAssignCourseService_SelectListAssign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrMonthClassNumByStudentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetCurrMonthClassNumByStudentId" message="tns:IAssignCourseService_GetCurrMonthClassNumByStudentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetCurrMonthClassNumByStudentIdResponse" message="tns:IAssignCourseService_GetCurrMonthClassNumByStudentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssign_ByParentID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssign_ByParentID" message="tns:IAssignCourseService_SelectListAssign_ByParentID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssign_ByParentIDResponse" message="tns:IAssignCourseService_SelectListAssign_ByParentID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignPrint" message="tns:IAssignCourseService_SelectListAssignPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignPrintResponse" message="tns:IAssignCourseService_SelectListAssignPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignFiliter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignFiliter" message="tns:IAssignCourseService_SelectListAssignFiliter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignFiliterResponse" message="tns:IAssignCourseService_SelectListAssignFiliter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignFiliterPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignFiliterPrint" message="tns:IAssignCourseService_SelectListAssignFiliterPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectListAssignFiliterPrintResponse" message="tns:IAssignCourseService_SelectListAssignFiliterPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XC_SelectListAssign_Student_OR_Teacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/XC_SelectListAssign_Student_OR_Teacher" message="tns:IAssignCourseService_XC_SelectListAssign_Student_OR_Teacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/XC_SelectListAssign_Student_OR_TeacherResponse" message="tns:IAssignCourseService_XC_SelectListAssign_Student_OR_Teacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherHoursFiliter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeacherHoursFiliter" message="tns:IAssignCourseService_GetTeacherHoursFiliter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeacherHoursFiliterResponse" message="tns:IAssignCourseService_GetTeacherHoursFiliter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeacherHours" message="tns:IAssignCourseService_GetTeacherHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/GetTeacherHoursResponse" message="tns:IAssignCourseService_GetTeacherHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTable" message="tns:IAssignCourseService_CopyClassTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableResponse" message="tns:IAssignCourseService_CopyClassTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableNew" message="tns:IAssignCourseService_CopyClassTableNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableNewResponse" message="tns:IAssignCourseService_CopyClassTableNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableNew_For_PPTS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableNew_For_PPTS" message="tns:IAssignCourseService_CopyClassTableNew_For_PPTS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableNew_For_PPTSResponse" message="tns:IAssignCourseService_CopyClassTableNew_For_PPTS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableTeacher" message="tns:IAssignCourseService_CopyClassTableTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CopyClassTableTeacherResponse" message="tns:IAssignCourseService_CopyClassTableTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/ConfirmAssignCourse" message="tns:IAssignCourseService_ConfirmAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/ConfirmAssignCourseResponse" message="tns:IAssignCourseService_ConfirmAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancleAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CancleAssignCourse" message="tns:IAssignCourseService_CancleAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CancleAssignCourseResponse" message="tns:IAssignCourseService_CancleAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/TemporaryAssignCourse" message="tns:IAssignCourseService_TemporaryAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/TemporaryAssignCourseResponse" message="tns:IAssignCourseService_TemporaryAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FirstCourseConfirm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/FirstCourseConfirm" message="tns:IAssignCourseService_FirstCourseConfirm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/FirstCourseConfirmResponse" message="tns:IAssignCourseService_FirstCourseConfirm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancleCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CancleCourse" message="tns:IAssignCourseService_CancleCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CancleCourseResponse" message="tns:IAssignCourseService_CancleCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectConflictInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/SelectConflictInfoList" message="tns:IAssignCourseService_SelectConflictInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/SelectConflictInfoListResponse" message="tns:IAssignCourseService_SelectConflictInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeAll" message="tns:IAssignCourseService_CheckSimpleResourceTimeAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeAllResponse" message="tns:IAssignCourseService_CheckSimpleResourceTimeAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeTeacher" message="tns:IAssignCourseService_CheckSimpleResourceTimeTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeTeacherResponse" message="tns:IAssignCourseService_CheckSimpleResourceTimeTeacher_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WCF.IAssignCourseWCFService" type="tns:IAssignCourseService">
+    <wsp:PolicyReference URI="#WCF.IAssignCourseWCFService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectSubjectBy_TeacherUserID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectSubjectBy_TeacherUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSubjectBy_TeacherUserIDNew">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectSubjectBy_TeacherUserIDNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlanGetSubject_GradeBystudentID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeBystudentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlanGetSubject_GradeBystudentIDs">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlanGetSubject_GradeBystudentIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUS_SelectCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CUS_SelectCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUS_SelectCourseNew">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CUS_SelectCourseNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUS_SelectCourseCurrMonth">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CUS_SelectCourseCurrMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mircro_SelectCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/Mircro_SelectCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeacherAppreciationBy_AssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectTeacherAppreciationBy_AssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCourseService">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckCourseService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCourseReceive">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetCompanyCourseReceive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NEWClassGroup_CreateClassTime">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/NEWClassGroup_CreateClassTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxTime">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetMaxTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/ConfirmCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAssignCourseBy_StudentIDs_Status">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectAssignCourseBy_StudentIDs_Status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePretreatmentTemporaryAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SavePretreatmentTemporaryAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeacherAppreciationPoint">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/UpdateTeacherAppreciationPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_AppreciationID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListBy_AppreciationID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAssignCourseBy_StudentIDs_Status_Point">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectAssignCourseBy_StudentIDs_Status_Point" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMyAssignFiliter">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectMyAssignFiliter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyAssignHours">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetMyAssignHours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveKnowledgePointAppreciation">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveKnowledgePointAppreciation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteByAssignIDNew">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteByAssignIDNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_AssignIDNew">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListBy_AssignIDNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeachingAccessoryBy_AssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectTeachingAccessoryBy_AssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTeachingAccessory">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveTeachingAccessory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTeachingAccessoryList">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveTeachingAccessoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTeachingAccessoryByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteTeachingAccessoryByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlanStatus">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckPlanStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBy_Assign_PointID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteBy_Assign_PointID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_Assign_PointID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListBy_Assign_PointID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachingVersion">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetTeachingVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCourseIncomeVirtual">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveCourseIncomeVirtual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUS_GetTeacherCourseTimes">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CUS_GetTeacherCourseTimes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TempPlanSave_save">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/TempPlanSave_save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempKnowledgePoint">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveTempKnowledgePoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempKnowledgePointList">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveTempKnowledgePointList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTempKnowledgePointByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteTempKnowledgePointByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempTeachingAccessory">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveTempTeachingAccessory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTempTeachingAccessoryList">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SaveTempTeachingAccessoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTempTeachingAccessoryListByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectTempTeachingAccessoryListByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTempTeachingAccessoryByAssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteTempTeachingAccessoryByAssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_SelectCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_SelectCourse_ByID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse_ByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlanGetSubject_Grade">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlanGetSubject_Grade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_SelectCourse_ByStudent">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlan_SelectCourse_ByStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPlan_StudentID_BY_Teacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XPlan_StudentID_BY_Teacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTime_All">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListByIDForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListByIDForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CopyClassTableForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancleAssignCourseForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CancleAssignCourseForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryAssignCourseForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/TemporaryAssignCourseForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFreeTeacherForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectFreeTeacherForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeAllForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeAllForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeTeacherForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeTeacherForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTime_AllForArr">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime_AllForArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAssignCourseListByArgs">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectAssignCourseListByArgs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTime">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSomeOneConfirm">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/IsSomeOneConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneTeacherAssignCourseRetErrowString">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/AddOneTeacherAssignCourseRetErrowString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStudentAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/AddStudentAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BZ_CheckTemporaryAssignCourseTime">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/BZ_CheckTemporaryAssignCourseTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeManagerRefishCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/ChangeManagerRefishCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancleClassGroupAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CancleClassGroupAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BZ_IsHaveClassGroupStudentCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/BZ_IsHaveClassGroupStudentCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BZ_CancleTeacherCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/BZ_CancleTeacherCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BZ_IsClassGroupStudentCourse_AllCancle">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/BZ_IsClassGroupStudentCourse_AllCancle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductIsAvailable">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckProductIsAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductIsAvailable_ForMaster">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckProductIsAvailable_ForMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAssignCourseTeacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckAssignCourseTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStudentCoursed">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckStudentCoursed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnSS">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/returnSS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignForStaff">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssignForStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignForStaffPrint">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssignForStaffPrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAssignCourseByStudentAssignCourseID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/DeleteAssignCourseByStudentAssignCourseID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastStartTime">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetLastStartTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAbnormal">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SetAbnormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTeacherAppreciation">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTeacherAppreciationNew">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTeacherAppreciationPoint">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/InsertTeacherAppreciationPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherAppreciation_ByID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetTeacherAppreciation_ByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListBy_AssignID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListBy_AssignID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectWithIdentity">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectWithIdentity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExists">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFreeTeacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectFreeTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReadyClass">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetAllReadyClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancleCourseForTeacherChange">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CancleCourseForTeacherChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClassAdviser">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/UpdateClassAdviser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOppositionAssignCourseTeacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetOppositionAssignCourseTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/AddNewAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAssignCourseRetErrowType">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/AddNewAssignCourseRetErrowType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAssignCourseRetErrowString">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/AddNewAssignCourseRetErrowString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListByID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectList">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssign">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrMonthClassNumByStudentId">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetCurrMonthClassNumByStudentId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssign_ByParentID">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssign_ByParentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignPrint">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssignPrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignFiliter">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssignFiliter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectListAssignFiliterPrint">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectListAssignFiliterPrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XC_SelectListAssign_Student_OR_Teacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/XC_SelectListAssign_Student_OR_Teacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherHoursFiliter">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetTeacherHoursFiliter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherHours">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/GetTeacherHours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTable">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CopyClassTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableNew">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CopyClassTableNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableNew_For_PPTS">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CopyClassTableNew_For_PPTS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyClassTableTeacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CopyClassTableTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/ConfirmAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancleAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CancleAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryAssignCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/TemporaryAssignCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirstCourseConfirm">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/FirstCourseConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancleCourse">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CancleCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectConflictInfoList">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/SelectConflictInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeAll">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSimpleResourceTimeTeacher">
+      <soap12:operation soapAction="http://tempuri.org/IAssignCourseService/CheckSimpleResourceTimeTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AssignCourseWCFService">
+    <wsdl:port name="WCF.IAssignCourseWCFService" binding="tns:WCF.IAssignCourseWCFService">
+      <soap12:address location="http://course.xueda.com/wcf/AssignCourseWCFService.svc/wcf" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://course.xueda.com/wcf/AssignCourseWCFService.svc/wcf</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

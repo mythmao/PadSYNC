@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cloud.Course" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cloud.Course" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://course.xueda.com/wcf/AssignCourseWCFService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Cloud.Configuration" />
+  <xs:complexType name="ArrayOfStudentAssignCourseSubject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StudentAssignCourseSubject" nillable="true" type="tns:StudentAssignCourseSubject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudentAssignCourseSubject" nillable="true" type="tns:ArrayOfStudentAssignCourseSubject" />
+  <xs:complexType name="StudentAssignCourseSubject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentAssignCourseSubject" nillable="true" type="tns:StudentAssignCourseSubject" />
+  <xs:complexType name="ArrayOfXPlanSubjectGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XPlanSubjectGroup" nillable="true" type="tns:XPlanSubjectGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfXPlanSubjectGroup" nillable="true" type="tns:ArrayOfXPlanSubjectGroup" />
+  <xs:complexType name="XPlanSubjectGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XPlanSubjectGroup" nillable="true" type="tns:XPlanSubjectGroup" />
+  <xs:complexType name="ArrayOfXPlanSubjectGroupNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XPlanSubjectGroupNew" nillable="true" type="tns:XPlanSubjectGroupNew" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfXPlanSubjectGroupNew" nillable="true" type="tns:ArrayOfXPlanSubjectGroupNew" />
+  <xs:complexType name="XPlanSubjectGroupNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XPlanSubjectGroupNew" nillable="true" type="tns:XPlanSubjectGroupNew" />
+  <xs:complexType name="ArrayOfAssignCourse_TeacherAppreciation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssignCourse_TeacherAppreciation" nillable="true" type="tns:AssignCourse_TeacherAppreciation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssignCourse_TeacherAppreciation" nillable="true" type="tns:ArrayOfAssignCourse_TeacherAppreciation" />
+  <xs:complexType name="AssignCourse_TeacherAppreciation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AppreciationID" type="xs:long" />
+      <xs:element minOccurs="0" name="AppreciationLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppreciationSelfRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignCourseObj" nillable="true" type="tns:AssignCourse" />
+      <xs:element minOccurs="0" name="KnowledgePointAppreciationList" nillable="true" type="tns:ArrayOfKnowledgePointAppreciation" />
+      <xs:element minOccurs="0" name="StydyAttentionLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StydyAttitudeLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ThinkSkillLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnderstandsSkillLevel" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignCourse_TeacherAppreciation" nillable="true" type="tns:AssignCourse_TeacherAppreciation" />
+  <xs:complexType name="AssignCourse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseObject">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="StudentDis" nillable="true" type="q1:ArrayOfKeyValueOflonglong" />
+          <xs:element name="_AbnormalReasonType" type="xs:int" />
+          <xs:element name="_AllCourseCount" nillable="true" type="xs:string" />
+          <xs:element name="_AnalyseTime" type="xs:dateTime" />
+          <xs:element name="_AsignCourseID" type="xs:long" />
+          <xs:element name="_AsignStatus" type="xs:unsignedByte" />
+          <xs:element name="_AsignType" type="xs:unsignedByte" />
+          <xs:element name="_AssignConsumeStatus" type="xs:int" />
+          <xs:element name="_AssignCount" type="xs:decimal" />
+          <xs:element name="_AssignID" type="xs:long" />
+          <xs:element name="_CancelType" type="xs:unsignedByte" />
+          <xs:element name="_ClassTime" type="xs:long" />
+          <xs:element name="_CompanyID" type="xs:long" />
+          <xs:element name="_CompanyName" nillable="true" type="xs:string" />
+          <xs:element name="_ConfirmPersonStyle" type="xs:int" />
+          <xs:element name="_ConfirmSource" type="xs:int" />
+          <xs:element name="_ConformStatus" type="xs:int" />
+          <xs:element name="_ConsultatorName" nillable="true" type="xs:string" />
+          <xs:element name="_ConsultatorNames" nillable="true" type="xs:string" />
+          <xs:element name="_ConsultatorPassportID" type="xs:long" />
+          <xs:element name="_ConsultatorPassportJobID" type="xs:long" />
+          <xs:element name="_ConsultatorUserID" type="xs:long" />
+          <xs:element name="_ConsumeCountHours" type="xs:decimal" />
+          <xs:element name="_ContractCode" nillable="true" type="xs:string" />
+          <xs:element name="_ContractID" type="xs:long" />
+          <xs:element name="_CourseConfirmTime" type="xs:dateTime" />
+          <xs:element name="_CoursePlanCount" nillable="true" type="xs:string" />
+          <xs:element name="_CourseSourceType" type="xs:long" />
+          <xs:element name="_CourseTask" nillable="true" type="xs:string" />
+          <xs:element name="_CourseTimeLong" type="xs:decimal" />
+          <xs:element name="_CourseType" type="xs:int" />
+          <xs:element name="_CreateDate" type="xs:dateTime" />
+          <xs:element name="_CustomerType" type="xs:int" />
+          <xs:element name="_EndTime" type="xs:dateTime" />
+          <xs:element name="_EventID" type="xs:long" />
+          <xs:element name="_FinancialTime" type="xs:dateTime" />
+          <xs:element name="_GradeID" type="xs:int" />
+          <xs:element name="_GradeName" nillable="true" type="xs:string" />
+          <xs:element name="_HasAnalyse" type="xs:boolean" />
+          <xs:element name="_InstructionalObjectives" nillable="true" type="xs:string" />
+          <xs:element name="_LastModifiedDate" type="xs:dateTime" />
+          <xs:element name="_ManagerJobPassPortID" type="xs:long" />
+          <xs:element name="_ManagerUserID" type="xs:long" />
+          <xs:element name="_ManagerUserName" nillable="true" type="xs:string" />
+          <xs:element name="_ManagerUserPassportID" type="xs:long" />
+          <xs:element name="_MasterProductID" type="xs:long" />
+          <xs:element name="_MasterProductName" nillable="true" type="xs:string" />
+          <xs:element name="_OAUserID" nillable="true" type="xs:string" />
+          <xs:element name="_OldSchoolID" type="xs:long" />
+          <xs:element name="_PJobPassportID" type="xs:long" />
+          <xs:element name="_POrgPath" nillable="true" type="xs:string" />
+          <xs:element name="_PUserID" type="xs:long" />
+          <xs:element name="_PUserName" nillable="true" type="xs:string" />
+          <xs:element name="_PUserPassportID" type="xs:long" />
+          <xs:element name="_ParentAssignID" type="xs:long" />
+          <xs:element name="_PlanCreateTime" type="xs:dateTime" />
+          <xs:element name="_PlanJobPassportID" type="xs:long" />
+          <xs:element name="_PlanStatus" type="xs:int" />
+          <xs:element name="_PlanUserID" type="xs:long" />
+          <xs:element name="_PlanUserName" nillable="true" type="xs:string" />
+          <xs:element name="_PlanUserPassportID" type="xs:long" />
+          <xs:element name="_Price" type="xs:decimal" />
+          <xs:element name="_ProductID" type="xs:long" />
+          <xs:element name="_ProductName" nillable="true" type="xs:string" />
+          <xs:element name="_SchoolID" type="xs:long" />
+          <xs:element name="_SchoolName" nillable="true" type="xs:string" />
+          <xs:element name="_StartTime" type="xs:dateTime" />
+          <xs:element name="_StudentActivity" nillable="true" type="xs:string" />
+          <xs:element name="_StudentName" nillable="true" type="xs:string" />
+          <xs:element name="_StudentPassportID" type="xs:long" />
+          <xs:element name="_StudentUserID" type="xs:long" />
+          <xs:element name="_StuendtCode" nillable="true" type="xs:string" />
+          <xs:element name="_SubjectGroupID" type="xs:long" />
+          <xs:element name="_SubjectGroupName" nillable="true" type="xs:string" />
+          <xs:element name="_SubjectID" type="xs:int" />
+          <xs:element name="_SubjectName" nillable="true" type="xs:string" />
+          <xs:element name="_TOrgPath" nillable="true" type="xs:string" />
+          <xs:element name="_TeachHours" type="xs:decimal" />
+          <xs:element name="_TeacherActivity" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherCode" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherJobID" type="xs:long" />
+          <xs:element name="_TeacherJobPassportID" type="xs:long" />
+          <xs:element name="_TeacherName" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherPassportID" type="xs:long" />
+          <xs:element name="_TeacherPatternID" type="xs:int" />
+          <xs:element name="_TeacherPatternName" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherSchoolID" type="xs:long" />
+          <xs:element name="_TeacherSubjectGroupID" type="xs:long" />
+          <xs:element name="_TeacherSubjectGroupName" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherType" type="xs:long" />
+          <xs:element name="_TeacherTypeName" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherUserID" type="xs:long" />
+          <xs:element name="_TeachingDifficulties" nillable="true" type="xs:string" />
+          <xs:element name="_TeachingFocus" nillable="true" type="xs:string" />
+          <xs:element name="_TeachingSchoolID" type="xs:long" />
+          <xs:element name="_TeachingSchoolName" nillable="true" type="xs:string" />
+          <xs:element name="_TeachingVersion" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AssignCourse" nillable="true" type="tns:AssignCourse" />
+  <xs:complexType name="BaseObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cloud.Configuration" base="q2:EmptyObject">
+        <xs:sequence>
+          <xs:element name="_AutoChild" type="xs:boolean" />
+          <xs:element name="_HostID" type="xs:long" />
+          <xs:element name="_ID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseObject" nillable="true" type="tns:BaseObject" />
+  <xs:complexType name="ArrayOfKnowledgePointAppreciation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KnowledgePointAppreciation" nillable="true" type="tns:KnowledgePointAppreciation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKnowledgePointAppreciation" nillable="true" type="tns:ArrayOfKnowledgePointAppreciation" />
+  <xs:complexType name="KnowledgePointAppreciation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseObject">
+        <xs:sequence>
+          <xs:element name="_AppreciationID" type="xs:long" />
+          <xs:element name="_AssignID" type="xs:long" />
+          <xs:element name="_KnowledgePointAppreciationID" type="xs:long" />
+          <xs:element name="_KnowledgePointID" type="xs:int" />
+          <xs:element name="_KnowledgePointLevel" type="xs:decimal" />
+          <xs:element name="_KnowledgePointName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KnowledgePointAppreciation" nillable="true" type="tns:KnowledgePointAppreciation" />
+  <xs:complexType name="ArrayOfMircroAssignCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MircroAssignCourse" nillable="true" type="tns:MircroAssignCourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMircroAssignCourse" nillable="true" type="tns:ArrayOfMircroAssignCourse" />
+  <xs:complexType name="MircroAssignCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeachHours" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MircroAssignCourse" nillable="true" type="tns:MircroAssignCourse" />
+  <xs:complexType name="TeacherAppreciation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseObject">
+        <xs:sequence>
+          <xs:element name="_AllLevel" type="xs:decimal" />
+          <xs:element name="_AppreciationID" type="xs:long" />
+          <xs:element name="_AppreciationLevel" type="xs:int" />
+          <xs:element name="_AppreciationRemark" nillable="true" type="xs:string" />
+          <xs:element name="_AppreciationSelfRemark" nillable="true" type="xs:string" />
+          <xs:element name="_AppreciationSwitch" type="xs:int" />
+          <xs:element name="_AssignID" type="xs:long" />
+          <xs:element name="_EndTime" type="xs:dateTime" />
+          <xs:element name="_GradeID" type="xs:int" />
+          <xs:element name="_StartTime" type="xs:dateTime" />
+          <xs:element name="_StudentName" nillable="true" type="xs:string" />
+          <xs:element name="_StudentPassportID" type="xs:long" />
+          <xs:element name="_StydyAttentionLevel" type="xs:decimal" />
+          <xs:element name="_StydyAttitudeLevel" type="xs:decimal" />
+          <xs:element name="_SubjectID" type="xs:int" />
+          <xs:element name="_TeacherName" nillable="true" type="xs:string" />
+          <xs:element name="_TeacherPassportID" type="xs:long" />
+          <xs:element name="_ThinkSkillLevel" type="xs:decimal" />
+          <xs:element name="_UnderstandsSkillLevel" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TeacherAppreciation" nillable="true" type="tns:TeacherAppreciation" />
+  <xs:complexType name="MyAssignCourseConditions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppreciationStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FDJAStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+      <xs:element minOccurs="0" name="TimeFlg" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyAssignCourseConditions" nillable="true" type="tns:MyAssignCourseConditions" />
+  <xs:complexType name="ArrayOfMyAssignCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyAssignCourse" nillable="true" type="tns:MyAssignCourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMyAssignCourse" nillable="true" type="tns:ArrayOfMyAssignCourse" />
+  <xs:complexType name="MyAssignCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AppreciationID" type="xs:long" />
+      <xs:element minOccurs="0" name="AppreciationLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppreciationSelfRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignCourseObj" nillable="true" type="tns:AssignCourse" />
+      <xs:element minOccurs="0" name="KnowledgePointAppreciationList" nillable="true" type="tns:ArrayOfKnowledgePointAppreciation" />
+      <xs:element minOccurs="0" name="StydyAttentionLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StydyAttitudeLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ThinkSkillLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnderstandsSkillLevel" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyAssignCourse" nillable="true" type="tns:MyAssignCourse" />
+  <xs:complexType name="ArrayOfTeacherCourseTimes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeacherCourseTimes" nillable="true" type="tns:TeacherCourseTimes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTeacherCourseTimes" nillable="true" type="tns:ArrayOfTeacherCourseTimes" />
+  <xs:complexType name="TeacherCourseTimes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeacherCourseTimes" nillable="true" type="tns:TeacherCourseTimes" />
+  <xs:complexType name="ArrayOfXPlanAssignCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XPlanAssignCourse" nillable="true" type="tns:XPlanAssignCourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfXPlanAssignCourse" nillable="true" type="tns:ArrayOfXPlanAssignCourse" />
+  <xs:complexType name="XPlanAssignCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignCourseObject" nillable="true" type="tns:AssignCourseObj" />
+      <xs:element minOccurs="0" name="KnowledgePointAppreciationList" nillable="true" type="tns:ArrayOfKnowledgePointAppreciation" />
+      <xs:element minOccurs="0" name="TeacherAppreciationObject" nillable="true" type="tns:TeacherAppreciationObj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XPlanAssignCourse" nillable="true" type="tns:XPlanAssignCourse" />
+  <xs:complexType name="AssignCourseObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsignStatus" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="AssignID" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradeID" type="xs:int" />
+      <xs:element minOccurs="0" name="GradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StudentID" type="xs:long" />
+      <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPassportID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignCourseObj" nillable="true" type="tns:AssignCourseObj" />
+  <xs:complexType name="TeacherAppreciationObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AppreciationID" type="xs:long" />
+      <xs:element minOccurs="0" name="AppreciationRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppreciationSelfRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StydyAttentionLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StydyAttitudeLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ThinkSkillLevel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnderstandsSkillLevel" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeacherAppreciationObj" nillable="true" type="tns:TeacherAppreciationObj" />
+</xs:schema>
