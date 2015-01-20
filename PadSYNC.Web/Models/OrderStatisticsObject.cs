@@ -11,17 +11,48 @@ namespace PadSYNC.Web.Models
 {
     public class OrderStatisticsObject : ITableObject
     {
-        public string GetTableData(TableObject table)
+        public List<OrderStatistics> GetList(TableObject table)
         {
-            string result = "";
+            string key = CacheUtility.GetKey(table);
+            object obj = CacheUtility.Get(key);
+            if (obj != null)
+            {
+                return (List<OrderStatistics>)obj;
+            }
             string sqlStr = "select * from OrderStatistics where LastModified>@LastModified";
 
             List<SqlParameter> pms = new List<SqlParameter>();
             pms.Add(new SqlParameter("LastModified", table.LastModified));
             
             List<OrderStatistics> list = OrderStatisticsBLL.Search(sqlStr, pms.ToArray());
-            result = CustomJsonConvert.SerializeObject(list);
+            if (list.Count > 0)
+            {
+                CacheUtility.Insert(key, list);
+            }
+            return list;
+        }
+        public string GetTableData(TableObject table)
+        {
+            string result = "";
+            List<OrderStatistics> list = GetList(table);
+            List<OrderStatistics> resultList = null;
+            if (table.CurPage > 0 && table.PageSize > 0)
+            {
+                resultList = list.OrderByDescending(p => p.OrderID).Skip((table.CurPage - 1) * table.PageSize).Take(table.PageSize).ToList();
+            }
+            else
+            {
+                resultList = list;
+            }
+            result = CustomJsonConvert.SerializeObject(resultList);
             return result;
+        }
+        public int GetTotalCount(TableObject table)
+        {
+            int count = 0;
+            List<OrderStatistics> list = GetList(table);
+            count = list.Count;
+            return count;
         }
         public void UpdateTable(string tableName, string data)
         {

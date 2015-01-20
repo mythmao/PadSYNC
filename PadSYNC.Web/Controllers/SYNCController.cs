@@ -51,6 +51,18 @@ namespace PadSYNC.Web.Controllers
             }
             return result;
         }
+        public  int GetTotalCount(TableObject table)
+        {
+            int  result = 0;
+            if (tableList.Contains(table.TableName))
+            {
+                string className = "PadSYNC.Web.Models." + table.TableName + "Object";
+                Type t = Type.GetType(className);
+                ITableObject ito = Activator.CreateInstance(t) as ITableObject;
+                result = ito.GetTotalCount(table);
+            }
+            return result;
+        }
         public ActionResult GetDataInOne(string tables)
         {
             List<UpdateObject> list = new List<UpdateObject>();
@@ -59,9 +71,11 @@ namespace PadSYNC.Web.Controllers
             foreach (TableObject t in tb)
             {
                 string data = GetTableData(t);
+                int count = GetTotalCount(t);
                 UpdateObject uo = new UpdateObject();
                 uo.TableName = t.TableName;
                 uo.Data = data;
+                uo.Count = count;
                 list.Add(uo);
             }
             string result = JsonConvert.SerializeObject(list);
@@ -72,19 +86,28 @@ namespace PadSYNC.Web.Controllers
             string result = "Failed";
             try
             {
-                //List<PadSYNC.Model.AssignCourse> list = JsonConvert.DeserializeObject<List<PadSYNC.Model.AssignCourse>>(data);
+                List<PadSYNC.Model.AssignCourse> list = JsonConvert.DeserializeObject<List<PadSYNC.Model.AssignCourse>>(data);
                 //测试消息队列用
-                List<PadSYNC.Model.AssignCourse> list = AssignCourseBLL.Search(@"select top 5 starttime,endtime,* from [CloudCourse].[dbo].[AssignCourse]
-                where SchoolID=18 and studentuserid=1303839
-                 order by assignid desc");
+//                List<PadSYNC.Model.AssignCourse> list = AssignCourseBLL.Search(@"select top 5 starttime,endtime,* from [CloudCourse].[dbo].[AssignCourse]
+//                where SchoolID=18 and studentuserid=1303839
+//                 order by assignid desc");
 
                 if (list != null)
                 {
                     foreach (PadSYNC.Model.AssignCourse ac in list)
                     {
-                        ac.Gid = Guid.NewGuid();
+                        //ac.Gid = Guid.NewGuid();
+                        //新增必须为0，不为0会更改原纪录
+                        //ac.AssignID = 0;
+                        //排课状态为排定
+                        //ac.AsignStatus = 1;
+                        //5表示来源是Pad
+                        //ac.CourseSourceType = 5;
+                        //异常类型
+                        //ac.AbnormalReasonType = 0;
                         string json = JsonConvert.SerializeObject(ac);
                         SYNCOperation op = new SYNCOperation();
+                        op.Id = ac.AssignID;
                         op.Gid = ac.Gid;
                         op.Name = "AssignCourse";
                         op.Status = 0;

@@ -11,9 +11,14 @@ namespace PadSYNC.Web.Models
 {
     public class AssignCourseObject : ITableObject
     {
-        public string GetTableData(TableObject table)
+        public List<AssignCourse> GetList(TableObject table)
         {
-            string result = "";
+            string key = CacheUtility.GetKey(table);
+            object obj = CacheUtility.Get(key);
+            if (obj != null)
+            {
+                return (List<AssignCourse>)obj;
+            }
             string sqlStr = "select * from AssignCourse where CompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified";
             
             List<SqlParameter> pms = new List<SqlParameter>();
@@ -31,8 +36,38 @@ namespace PadSYNC.Web.Models
                 pms.Add(new SqlParameter("EndDate", table.EndDate));
             }
             List<AssignCourse> list = AssignCourseBLL.Search(sqlStr,pms.ToArray());
-            result = CustomJsonConvert.SerializeObject(list);
+            if (list.Count > 0)
+            {
+                byte[] b = new byte[8];
+                if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
+                {
+                    CacheUtility.Insert(key, list);
+                }
+            }
+            return list;
+        }
+        public string GetTableData(TableObject table)
+        {
+            string result = "";
+            List<AssignCourse> list = GetList(table);
+            List<AssignCourse> resultList = null;
+            if (table.CurPage > 0 && table.PageSize > 0)
+            {
+                resultList = list.OrderByDescending(p => p.AssignID).Skip((table.CurPage - 1) * table.PageSize).Take(table.PageSize).ToList();
+            }
+            else
+            {
+                resultList = list;
+            }
+            result = CustomJsonConvert.SerializeObject(resultList);
             return result;
+        }
+        public int GetTotalCount(TableObject table)
+        {
+            int count = 0;
+            List<AssignCourse> list = GetList(table);
+            count = list.Count;
+            return count;
         }
         public void UpdateTable(string tableName, string data)
         {

@@ -1275,7 +1275,7 @@ namespace PadSYNC.Model
             {
                 if (dr["LastModified"] != DBNull.Value)
                 {
-                    this.LastModified = (System.Byte[])dr["LastModified"];
+                    this.LastModified =(System.Byte[])dr["LastModified"];
                 }
             }
         }

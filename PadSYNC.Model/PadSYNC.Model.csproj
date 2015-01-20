@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DBSYNC\DBSYNC.web\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -44,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Asset.cs" />
     <Compile Include="AssignCourse.cs" />
+    <Compile Include="CommonUtility.cs" />
     <Compile Include="CustomerSearch.cs" />
     <Compile Include="ITableObject.cs" />
     <Compile Include="JobSearch.cs" />

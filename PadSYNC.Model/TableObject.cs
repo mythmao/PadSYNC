@@ -17,5 +17,7 @@ namespace PadSYNC.Model
         public string LastModifiedDate { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+        public int CurPage { get; set; }
+        public int PageSize { get; set; }
     }
 }

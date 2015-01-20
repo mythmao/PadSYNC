@@ -14,10 +14,11 @@ namespace PadSYNC.Model
             /// </summary>
             public System.Guid  Gid {get;set;}
             /// <summary>
-            /// 更新状态 
-            /// 0：未更新 
-            /// 1：更新成功 
-            /// 2：更新失败
+            /// 更新状态
+           ///0：未更新
+           ///1：更新成功
+           ///2：更新失败
+   
             /// </summary>
             public System.Int32  Status {get;set;}
             /// <summary>
@@ -32,6 +33,14 @@ namespace PadSYNC.Model
             /// 时间戳
             /// </summary>
             public System.Byte[]  LastModified {get;set;}
+            /// <summary>
+            /// 
+            /// </summary>
+            public System.DateTime  InsertDate {get;set;}
+            /// <summary>
+            /// 
+            /// </summary>
+            public System.Int64  Id {get;set;}
         #endregion
         public SYNCOperation() { }
         public SYNCOperation(DataRow dr)
@@ -69,6 +78,20 @@ namespace PadSYNC.Model
                if(dr["LastModified"]!=DBNull.Value)
                {
                    this.LastModified= (System.Byte[])dr["LastModified"];
+               } 
+            }
+            if (dr.Table.Columns.Contains("InsertDate"))
+            {
+               if(dr["InsertDate"]!=DBNull.Value)
+               {
+                   this.InsertDate= (System.DateTime)dr["InsertDate"];
+               } 
+            }
+            if (dr.Table.Columns.Contains("Id"))
+            {
+               if(dr["Id"]!=DBNull.Value)
+               {
+                   this.Id= (System.Int64)dr["Id"];
                } 
             }
         }

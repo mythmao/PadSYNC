@@ -14,9 +14,14 @@ namespace PadSYNC.Web.Models
 {
     public class OrderItemsObject : ITableObject
     {
-        public string GetTableData(TableObject table)
+        public List<OrderItems> GetList(TableObject table)
         {
-            string result = "";
+            string key = CacheUtility.GetKey(table);
+            object obj = CacheUtility.Get(key);
+            if (obj != null)
+            {
+                return (List<OrderItems>)obj;
+            }
             string sqlStr = "select * from OrderItems where LastModified>@LastModified";
             List<DbParameter> paras = new List<DbParameter>();
             string providerName = ConfigurationManager.ConnectionStrings["CloudTrade"].ProviderName;
@@ -35,8 +40,34 @@ namespace PadSYNC.Web.Models
             }
            
             List<OrderItems> list = OrderItemsBLL.Search(sqlStr,paras.ToArray());
-            result = JsonConvert.SerializeObject(list);
+            if (list.Count > 0)
+            {
+                CacheUtility.Insert(key, list);
+            }
+            return list;
+        }
+        public string GetTableData(TableObject table)
+        {
+            string result = "";
+            List<OrderItems> list = GetList(table);
+            List<OrderItems> resultList = null;
+            if (table.CurPage > 0 && table.PageSize > 0)
+            {
+                resultList = list.OrderByDescending(p => p.OrderItemId).Skip((table.CurPage - 1) * table.PageSize).Take(table.PageSize).ToList();
+            }
+            else
+            {
+                resultList = list;
+            }
+            result = CustomJsonConvert.SerializeObject(resultList);
             return result;
+        }
+        public int GetTotalCount(TableObject table)
+        {
+            int count = 0;
+            List<OrderItems> list = GetList(table);
+            count = list.Count;
+            return count;
         }
         public void UpdateTable(string tableName, string data)
         {

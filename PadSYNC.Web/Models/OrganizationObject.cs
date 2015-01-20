@@ -12,9 +12,14 @@ namespace PadSYNC.Web.Models
 {
     public class OrganizationObject : ITableObject
     {
-        public string GetTableData(TableObject table)
+        public List<Organization> GetList(TableObject table)
         {
-            string result = "";
+            string key = CacheUtility.GetKey(table);
+            object obj = CacheUtility.Get(key);
+            if (obj != null)
+            {
+                return (List<Organization>)obj;
+            }
             string sqlStr = "select * from Organization where BranchID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified";
 
             List<MySqlParameter> pms = new List<MySqlParameter>();
@@ -32,8 +37,34 @@ namespace PadSYNC.Web.Models
             //    pms.Add(new MySqlParameter("EndDate", table.EndDate));
             //}
             List<Organization> list = OrganizationBLL.Search(sqlStr, pms.ToArray());
-            result = CustomJsonConvert.SerializeObject(list);
+            if (list.Count > 0)
+            {
+                CacheUtility.Insert(key, list);
+            }
+            return list;
+        }
+        public string GetTableData(TableObject table)
+        {
+            string result = "";
+            List<Organization> list = GetList(table);
+            List<Organization> resultList = null;
+            if (table.CurPage > 0 && table.PageSize > 0)
+            {
+                resultList = list.OrderByDescending(p => p.OrgID).Skip((table.CurPage - 1) * table.PageSize).Take(table.PageSize).ToList();
+            }
+            else
+            {
+                resultList = list;
+            }
+            result = CustomJsonConvert.SerializeObject(resultList);
             return result;
+        }
+        public int GetTotalCount(TableObject table)
+        {
+            int count = 0;
+            List<Organization> list = GetList(table);
+            count = list.Count;
+            return count;
         }
         public void UpdateTable(string tableName, string data)
         {

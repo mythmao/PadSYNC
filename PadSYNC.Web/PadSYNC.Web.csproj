@@ -211,6 +211,7 @@
     <Compile Include="Models\AssetObject.cs" />
     <Compile Include="Models\AssignCourseObject.cs" />
     <Compile Include="Models\AssignCourseTranslateEntityAndDataContract.cs" />
+    <Compile Include="Models\CacheUtility.cs" />
     <Compile Include="Models\CustomerSearchObject.cs" />
     <Compile Include="Models\CustomJsonConvert.cs" />
     <Compile Include="Models\JobSearchObject.cs" />

@@ -11,10 +11,37 @@ namespace PadSYNC.Web.Models
 {
     public class AssetObject : ITableObject
     {
-        public string GetTableData(TableObject table)
+        public List<Asset> GetList(TableObject table)
         {
-            string result = "";
-            string sqlStr = "select * from Asset where SubCompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified";
+            string key = CacheUtility.GetKey(table);
+            object obj = CacheUtility.Get(key);
+            if (obj != null)
+            {
+                return (List<Asset>)obj;
+            }
+            string sqlStr = "";
+            byte[] TimeStamp = new byte[8];
+            if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(TimeStamp))
+            {
+                sqlStr = @"select * from Asset where SubCompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified 
+and [OwnerID]
+in(
+select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
+  
+  )";
+                //AND (SS.TotalCourseAmount>0 OR SS.CommonCourseAmount>0 OR SS.SpecialCourseAmount>0)
+            }
+            else
+            {
+                sqlStr = @"select * from Asset where SubCompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified";
+            }
+            //[CLOUDCUSTOMER]为链接服务器
+//            string sqlStr = @"select * from Asset where SubCompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified 
+//and [OwnerID]
+//in(
+//select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
+//  AND (SS.TotalCourseAmount>0 OR SS.CommonCourseAmount>0 OR SS.SpecialCourseAmount>0)
+//  )";
             
             List<SqlParameter> pms = new List<SqlParameter>();
             pms.Add(new SqlParameter("BranchID", table.BranchID));
@@ -31,8 +58,38 @@ namespace PadSYNC.Web.Models
             //    pms.Add(new SqlParameter("EndDate", table.EndDate));
             //}
             List<Asset> list = AssetBLL.Search(sqlStr,pms.ToArray());
-            result = CustomJsonConvert.SerializeObject(list);
+            if (list.Count > 0)
+            {
+                byte[] b = new byte[8];
+                if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
+                {
+                    CacheUtility.Insert(key, list);
+                }
+            }
+            return list;
+        }
+        public string GetTableData(TableObject table)
+        {
+            string result = "";
+            List<Asset> list = GetList(table);
+            List<Asset> resultList = null;
+            if (table.CurPage > 0 && table.PageSize > 0)
+            {
+                resultList = list.OrderByDescending(p => p.AssetID).Skip((table.CurPage - 1) * table.PageSize).Take(table.PageSize).ToList();
+            }
+            else
+            {
+                resultList = list;
+            }
+            result = CustomJsonConvert.SerializeObject(resultList);
             return result;
+        }
+        public int GetTotalCount(TableObject table)
+        {
+            int count = 0;
+            List<Asset> list = GetList(table);
+            count = list.Count;
+            return count;
         }
         public void UpdateTable(string tableName, string data)
         {

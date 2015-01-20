@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Newtonsoft.Json;
 
 namespace PadSYNC.Model
 {
     public partial class AssignCourse
     {
         #region 属性
-
+            /// <summary>
+            /// Pad端操作类型  0为新增或者更改 1为删除
+            /// </summary>
+            public int PadOperType { get; set; }
+            //public bool ShouldSerializeGid()
+            //{
+            //    return false;
+            //}
             public Guid Gid { get; set; }
             /// <summary>
             /// 

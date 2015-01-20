@@ -11,9 +11,14 @@ namespace PadSYNC.Web.Models
 {
     public class ProductAssignObject : ITableObject
     {
-        public string GetTableData(TableObject table)
+        public List<ProductAssign> GetList(TableObject table)
         {
-            string result = "";
+            string key = CacheUtility.GetKey(table);
+            object obj = CacheUtility.Get(key);
+            if (obj != null)
+            {
+                return (List<ProductAssign>)obj;
+            }
             string sqlStr = "select * from ProductAssign where LastModified>@LastModified";
             
             List<SqlParameter> pms = new List<SqlParameter>();
@@ -31,8 +36,34 @@ namespace PadSYNC.Web.Models
             //    pms.Add(new SqlParameter("EndDate", table.EndDate));
             //}
             List<ProductAssign> list = ProductAssignBLL.Search(sqlStr,pms.ToArray());
-            result = CustomJsonConvert.SerializeObject(list);
+            if (list.Count > 0)
+            {
+                CacheUtility.Insert(key, list);
+            }
+            return list;
+        }
+        public string GetTableData(TableObject table)
+        {
+            string result = "";
+            List<ProductAssign> list = GetList(table);
+            List<ProductAssign> resultList = null;
+            if (table.CurPage > 0 && table.PageSize > 0)
+            {
+                resultList = list.OrderByDescending(p => p.ProductAssignID).Skip((table.CurPage - 1) * table.PageSize).Take(table.PageSize).ToList();
+            }
+            else
+            {
+                resultList = list;
+            }
+            result = CustomJsonConvert.SerializeObject(resultList);
             return result;
+        }
+        public int GetTotalCount(TableObject table)
+        {
+            int count = 0;
+            List<ProductAssign> list = GetList(table);
+            count = list.Count;
+            return count;
         }
         public void UpdateTable(string tableName, string data)
         {
