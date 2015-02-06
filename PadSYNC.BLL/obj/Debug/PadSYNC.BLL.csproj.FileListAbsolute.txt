@@ -21,3 +21,5 @@ E:\project\PadSYNC\PadSYNC.BLL\bin\Debug\Microsoft.Practices.Unity.Interception.
 E:\project\PadSYNC\PadSYNC.BLL\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.xml
 E:\project\PadSYNC\PadSYNC.BLL\obj\Debug\PadSYNC.BLL.dll
 E:\project\PadSYNC\PadSYNC.BLL\obj\Debug\PadSYNC.BLL.pdb
+E:\project\PadSYNC\PadSYNC.BLL\bin\Debug\MySql.Data.dll
+E:\project\PadSYNC\PadSYNC.BLL\bin\Debug\MySql.Data.Entity.dll

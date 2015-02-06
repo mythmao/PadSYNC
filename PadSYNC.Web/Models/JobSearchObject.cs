@@ -16,6 +16,7 @@ namespace PadSYNC.Web.Models
     {
         public List<JobSearch> GetList(TableObject table)
         {
+            string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
             string key = CacheUtility.GetKey(table);
             object obj = CacheUtility.Get(key);
             if (obj != null)
@@ -55,6 +56,13 @@ namespace PadSYNC.Web.Models
                 if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
                 {
                     CacheUtility.Insert(key, list);
+                }
+                else
+                {
+                    if (CacheEnable == "true")
+                    {
+                        CacheUtility.Insert(key, list);
+                    }
                 }
             }
             return list;

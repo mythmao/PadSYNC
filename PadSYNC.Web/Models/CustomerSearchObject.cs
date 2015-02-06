@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Caching;
+using System.Configuration;
 
 namespace PadSYNC.Web.Models
 {
@@ -16,7 +17,7 @@ namespace PadSYNC.Web.Models
         public List<CustomerSearch> GetList(TableObject table)
         {
             string key = CacheUtility.GetKey(table);
-            
+            string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
             object obj = CacheUtility.Get(key);
             //string key1 = "000_000_000_000_000_074_014_085";
             //byte[] b = CacheUtility.GetByteFromString(key1);
@@ -47,6 +48,13 @@ namespace PadSYNC.Web.Models
                 if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
                 {
                     CacheUtility.Insert(key, list);
+                }
+                else
+                {
+                    if (CacheEnable == "true")
+                    {
+                        CacheUtility.Insert(key, list);
+                    }
                 }
                 
             }

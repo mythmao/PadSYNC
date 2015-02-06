@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 namespace PadSYNC.Web.Models
 {
@@ -13,6 +14,8 @@ namespace PadSYNC.Web.Models
     {
         public List<Asset> GetList(TableObject table)
         {
+            string CustomerLink = ConfigurationManager.AppSettings["CustomerLink"];
+            string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
             string key = CacheUtility.GetKey(table);
             object obj = CacheUtility.Get(key);
             if (obj != null)
@@ -26,7 +29,7 @@ namespace PadSYNC.Web.Models
                 sqlStr = @"select * from Asset where SubCompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified 
 and [OwnerID]
 in(
-select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
+select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
   
   )";
                 //AND (SS.TotalCourseAmount>0 OR SS.CommonCourseAmount>0 OR SS.SpecialCourseAmount>0)
@@ -64,6 +67,13 @@ select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] s
                 if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
                 {
                     CacheUtility.Insert(key, list);
+                }
+                else
+                {
+                    if (CacheEnable == "true")
+                    {
+                        CacheUtility.Insert(key, list);
+                    }
                 }
             }
             return list;

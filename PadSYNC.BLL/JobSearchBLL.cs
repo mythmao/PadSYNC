@@ -8,6 +8,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Data.Common;
 using PadSYNC.Model;
 using MySql.Data.MySqlClient;
+using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 
 namespace PadSYNC.BLL
 {
@@ -16,7 +17,7 @@ namespace PadSYNC.BLL
         public static DatabaseProviderFactory factory = new DatabaseProviderFactory();
         public static Database db = factory.Create("CloudOrganization");
 
-
+        
         public static List<JobSearch> Search(string sqlStr, params DbParameter[] parameters)
         {
             List<JobSearch> list = new List<JobSearch>();

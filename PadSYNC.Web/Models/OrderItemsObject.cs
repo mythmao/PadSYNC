@@ -16,6 +16,7 @@ namespace PadSYNC.Web.Models
     {
         public List<OrderItems> GetList(TableObject table)
         {
+            string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
             string key = CacheUtility.GetKey(table);
             object obj = CacheUtility.Get(key);
             if (obj != null)
@@ -42,7 +43,18 @@ namespace PadSYNC.Web.Models
             List<OrderItems> list = OrderItemsBLL.Search(sqlStr,paras.ToArray());
             if (list.Count > 0)
             {
-                CacheUtility.Insert(key, list);
+                byte[] b = new byte[8];
+                if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
+                {
+                    CacheUtility.Insert(key, list);
+                }
+                else
+                {
+                    if (CacheEnable == "true")
+                    {
+                        CacheUtility.Insert(key, list);
+                    }
+                }
             }
             return list;
         }

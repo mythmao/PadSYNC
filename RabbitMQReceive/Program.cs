@@ -17,6 +17,13 @@ namespace RabbitMQReceive
     {
         static void Main(string[] args)
         {
+            //test
+            //Test();
+            //return;
+            
+            //GetAC();
+            //return;
+            //test over
             string hostName = ConfigurationManager.AppSettings["RabbitMQHostName"];
             string userName = ConfigurationManager.AppSettings["RabbitMQUserName"];
             string password = ConfigurationManager.AppSettings["RabbitMQPassword"];
@@ -47,13 +54,32 @@ namespace RabbitMQReceive
                         try
                         {
                             ac = JsonConvert.DeserializeObject<PadSYNC.Model.AssignCourse>(message);
+                            //ac.Gid = new Guid("D67C7F51-29A1-4CA8-ACDF-08512FB3E8DF");
                             op = SYNCOperationBLL.GetById(ac.Gid);
+                            //op.Id = ac.AssignID;
+                            
+
                             AssignCourseDataContract acdc = Translate.TranslateAssignCourseEntityToGuest(ac);
                             bool b = false;
                             string result = "";
                             AssignCourseServiceClient client = new AssignCourseServiceClient();
                             Console.WriteLine("处理消息*---*" + ea.DeliveryTag);
-                            b = client.AddNewAssignCourseRetErrowString(out result,acdc);
+                            if(ac.PadOperType==0)
+                            {
+                                b = client.AddNewAssignCourseRetErrowString(out result, acdc);
+                            }
+                            else
+                            {
+                                List<CancelReasonConditionsDataContract> CancelReasonConditionsList = new List<CancelReasonConditionsDataContract>();
+                                CancelReasonConditionsDataContract cancelReasonConditions = new CancelReasonConditionsDataContract();
+                                cancelReasonConditions.AssignID = ac.AssignID;
+                                cancelReasonConditions.Reason = "";
+                                CancelReasonConditionsList.Add(cancelReasonConditions);
+                                CancelReasonConditionsDataContract[] arr = CancelReasonConditionsList.ToArray();
+                                b = client.CancleAssignCourse(arr, 0, 0, 1);
+                                result = "取消失败";
+                            }
+
                             if (b)
                             {
                                 result = "Success";
@@ -85,6 +111,54 @@ namespace RabbitMQReceive
                     }
                 }
             }
+        }
+
+        private static void GetAC()
+        {
+            PadSYNC.Model.AssignCourse ac= AssignCourseBLL.GetById(16961);
+            string json = JsonConvert.SerializeObject(ac);
+
+            ac.AssignID = 0;
+            ac.AsignCourseID = 0;
+            ac.StartTime = new DateTime(2015, 1, 30, 12, 0, 0);
+            ac.EndTime = new DateTime(2015, 1, 30, 13, 0, 0);
+
+
+            AssignCourseDataContract acdc = Translate.TranslateAssignCourseEntityToGuest(ac);
+            bool b = false;
+            string result = "";
+            AssignCourseServiceClient client = new AssignCourseServiceClient();
+            Console.WriteLine("处理消息*---*");
+            if (ac.PadOperType == 0)
+            {
+                b = client.AddNewAssignCourseRetErrowString(out result, acdc);
+            }
+            else
+            {
+                List<CancelReasonConditionsDataContract> CancelReasonConditionsList = new List<CancelReasonConditionsDataContract>();
+                CancelReasonConditionsDataContract cancelReasonConditions = new CancelReasonConditionsDataContract();
+                cancelReasonConditions.AssignID = ac.AsignCourseID;
+                cancelReasonConditions.Reason = "";
+                CancelReasonConditionsList.Add(cancelReasonConditions);
+                CancelReasonConditionsDataContract[] arr = CancelReasonConditionsList.ToArray();
+                b = client.CancleAssignCourse(arr, 0, 0, 1);
+                result = "取消失败";
+            }
+            Console.WriteLine("处理成功 {0}",  "*---*" + result);
+        }
+
+        private static void Test()
+        {
+            AssignCourseServiceClient client = new AssignCourseServiceClient();
+            List<CancelReasonConditionsDataContract> CancelReasonConditionsList = new List<CancelReasonConditionsDataContract>();
+            CancelReasonConditionsDataContract cancelReasonConditions = new CancelReasonConditionsDataContract();
+            cancelReasonConditions.AssignID = 16995;
+            cancelReasonConditions.Reason = "";
+            CancelReasonConditionsList.Add(cancelReasonConditions);
+            CancelReasonConditionsDataContract[] arr = CancelReasonConditionsList.ToArray();
+            bool b = client.CancleAssignCourse(arr, 0, 0, 1);
+            Console.WriteLine(b);
+            Console.ReadKey();
         }
     }
 }

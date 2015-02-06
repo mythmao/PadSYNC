@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 namespace PadSYNC.Web.Models
 {
@@ -13,6 +14,8 @@ namespace PadSYNC.Web.Models
     {
         public List<Period> GetList(TableObject table)
         {
+            string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
+            string CustomerLink = ConfigurationManager.AppSettings["CustomerLink"];
             string key = CacheUtility.GetKey(table);
             object obj = CacheUtility.Get(key);
             if (obj != null)
@@ -27,7 +30,7 @@ namespace PadSYNC.Web.Models
 (
 select AssetID from [CloudAsset].[dbo].[Asset] where [OwnerID]
 in(
-select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
+select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
 
   ))";
                 //  AND (SS.TotalCourseAmount>0 OR SS.CommonCourseAmount>0 OR SS.SpecialCourseAmount>0)
@@ -43,16 +46,16 @@ select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] s
             pms.Add(new SqlParameter("BranchID", table.BranchID));
             pms.Add(new SqlParameter("SchoolID", table.SchoolID));
             pms.Add(new SqlParameter("LastModified",table.LastModified));
-            if (!string.IsNullOrEmpty(table.StartDate))
-            {
-                sqlStr += " and AssetCreateDate>@StartDate";
-                pms.Add(new SqlParameter("StartDate", table.StartDate));
-            }
-            if (!string.IsNullOrEmpty(table.EndDate))
-            {
-                sqlStr += " and AssetCreateDate<@EndDate";
-                pms.Add(new SqlParameter("EndDate", table.EndDate));
-            }
+            //if (!string.IsNullOrEmpty(table.StartDate))
+            //{
+            //    sqlStr += " and AssetCreateDate>@StartDate";
+            //    pms.Add(new SqlParameter("StartDate", table.StartDate));
+            //}
+            //if (!string.IsNullOrEmpty(table.EndDate))
+            //{
+            //    sqlStr += " and AssetCreateDate<@EndDate";
+            //    pms.Add(new SqlParameter("EndDate", table.EndDate));
+            //}
             List<Period> list = PeriodBLL.Search(sqlStr,pms.ToArray());
             if (list.Count > 0)
             {
@@ -60,6 +63,13 @@ select CustomerID  FROM [CLOUDCUSTOMER].[CloudCustomer].[dbo].[CustomerSearch] s
                 if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(b))
                 {
                     CacheUtility.Insert(key, list);
+                }
+                else
+                {
+                    if (CacheEnable == "true")
+                    {
+                        CacheUtility.Insert(key, list);
+                    }
                 }
             }
             return list;

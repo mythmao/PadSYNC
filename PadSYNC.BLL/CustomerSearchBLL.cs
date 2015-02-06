@@ -15,7 +15,15 @@ namespace PadSYNC.BLL
         public static DatabaseProviderFactory factory = new DatabaseProviderFactory();
         public static Database db = factory.Create("CloudCustomer");
 
-
+        public static int GetTotalCount(string sqlStr,params SqlParameter[] parameters)
+        {
+            using (DbCommand cmd = db.GetSqlStringCommand(sqlStr))
+            {
+                cmd.Parameters.AddRange(parameters);
+                object obj = cmd.ExecuteScalar();
+                return Convert.ToInt32(obj);
+            }
+        }
         public static List<CustomerSearch> Search(string sqlStr, params SqlParameter[] parameters)
         {
             List<CustomerSearch> list = new List<CustomerSearch>();

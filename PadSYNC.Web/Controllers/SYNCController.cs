@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using PadSYNC.BLL;
 using PadSYNC.Model;
 using PadSYNC.Model.AssignCourseServiceReference;
+using PadSYNC.Web.Filters;
 using PadSYNC.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,7 @@ namespace PadSYNC.Web.Controllers
             }
             return result;
         }
+        [LogsFilterAttribute]
         public ActionResult GetDataInOne(string tables)
         {
             List<UpdateObject> list = new List<UpdateObject>();
