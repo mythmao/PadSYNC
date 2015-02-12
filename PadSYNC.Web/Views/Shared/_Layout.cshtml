@@ -6,11 +6,11 @@
         <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
+        @*@Styles.Render("~/Content/css")*@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
-        <header>
+        @*<header>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
@@ -28,7 +28,7 @@
                     </nav>
                 </div>
             </div>
-        </header>
+        </header>*@
         <div id="body">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
@@ -43,7 +43,7 @@
             </div>
         </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
+        @*@Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)*@
     </body>
 </html>

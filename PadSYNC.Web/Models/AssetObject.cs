@@ -23,15 +23,18 @@ namespace PadSYNC.Web.Models
                 return (List<Asset>)obj;
             }
             string sqlStr = "";
+            string sqlAdd = "";
+            if (table.IsValid == 1)
+            {
+                sqlAdd = " AND (TotalCourseAmount>0 OR CommonCourseAmount>0 OR SpecialCourseAmount>0) ";
+            }
             byte[] TimeStamp = new byte[8];
             if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(TimeStamp))
             {
                 sqlStr = @"select * from Asset where SubCompanyID=@BranchID and SchoolID=@SchoolID and LastModified>@LastModified 
 and [OwnerID]
 in(
-select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
-  
-  )";
+select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID "+sqlAdd+")";
                 //AND (SS.TotalCourseAmount>0 OR SS.CommonCourseAmount>0 OR SS.SpecialCourseAmount>0)
             }
             else

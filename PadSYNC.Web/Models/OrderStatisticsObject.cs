@@ -14,6 +14,7 @@ namespace PadSYNC.Web.Models
     {
         public List<OrderStatistics> GetList(TableObject table)
         {
+            string CustomerLink = ConfigurationManager.AppSettings["CustomerLink"];
             string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
             string key = CacheUtility.GetKey(table);
             object obj = CacheUtility.Get(key);
@@ -21,10 +22,39 @@ namespace PadSYNC.Web.Models
             {
                 return (List<OrderStatistics>)obj;
             }
-            string sqlStr = "select * from OrderStatistics where LastModified>@LastModified";
+
+            string sqlStr = "";
+            string sqlAdd = "";
+            if (table.IsValid == 1)
+            {
+                sqlAdd = " AND (TotalCourseAmount>0 OR CommonCourseAmount>0 OR SpecialCourseAmount>0) ";
+            }
+            sqlStr = @"select * from OrderStatistics where LastModified>@LastModified 
+and CustomerID
+in(
+select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID "+sqlAdd+")";
+
+//            byte[] TimeStamp = new byte[8];
+//            if (CacheUtility.GetCollectionKey(table.LastModified) == CacheUtility.GetCollectionKey(TimeStamp))
+//            {
+//                sqlStr = @"select * from OrderStatistics where LastModified>@LastModified 
+//and CustomerID
+//in(
+//select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID
+//  
+//  )";
+//                //AND (SS.TotalCourseAmount>0 OR SS.CommonCourseAmount>0 OR SS.SpecialCourseAmount>0)
+//            }
+//            else
+//            {
+//                sqlStr = @"select * from OrderStatistics where LastModified>@LastModified";
+//            }
+
+            //string sqlStr = "select * from OrderStatistics where LastModified>@LastModified";
 
             List<SqlParameter> pms = new List<SqlParameter>();
             pms.Add(new SqlParameter("LastModified", table.LastModified));
+            pms.Add(new SqlParameter("SchoolID", table.SchoolID));
             
             List<OrderStatistics> list = OrderStatisticsBLL.Search(sqlStr, pms.ToArray());
             if (list.Count > 0)

@@ -23,7 +23,7 @@ namespace PadSYNC.Web.Filters
                 sb.Append(k.Key + "=" + k.Value + "&");
             }
             string actionParameter = sb.ToString();
-            LogHelper.WriteLog(this.GetType(), sb.ToString());
+            LogHelper.WriteLog(this.GetType(),controllerName+"/"+actionName+"?"+ sb.ToString());
         }
     }
 }

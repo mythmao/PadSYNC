@@ -26,7 +26,13 @@ namespace PadSYNC.Web.Models
             {
                 return (List<CustomerSearch>)obj;
             }
-            string sqlStr = @"select * from CustomerSearch where BranchID=@BranchID and XDSchoolID=@SchoolID and LastModified>@LastModified order by LastModified desc";
+            string sqlAdd = "";
+            if(table.IsValid==1)
+            {
+                sqlAdd = " AND (TotalCourseAmount>0 OR CommonCourseAmount>0 OR SpecialCourseAmount>0) ";
+            }
+            string sqlStr = @"select * from CustomerSearch where BranchID=@BranchID and XDSchoolID=@SchoolID and LastModified>@LastModified "+sqlAdd+" order by LastModified desc";
+            //AND (TotalCourseAmount>0 OR CommonCourseAmount>0 OR SpecialCourseAmount>0)
             List<SqlParameter> pms = new List<SqlParameter>();
             pms.Add(new SqlParameter("BranchID", table.BranchID));
             pms.Add(new SqlParameter("SchoolID", table.SchoolID));

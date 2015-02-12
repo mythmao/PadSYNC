@@ -16,6 +16,7 @@ namespace PadSYNC.Web.Models
     {
         public List<OrderItems> GetList(TableObject table)
         {
+            string CustomerLink = ConfigurationManager.AppSettings["CustomerLink"];
             string CacheEnable = ConfigurationManager.AppSettings["CacheEnable"];
             string key = CacheUtility.GetKey(table);
             object obj = CacheUtility.Get(key);
@@ -23,7 +24,17 @@ namespace PadSYNC.Web.Models
             {
                 return (List<OrderItems>)obj;
             }
-            string sqlStr = "select * from OrderItems where LastModified>@LastModified";
+            string sqlStr = "";
+            string sqlAdd = "";
+            if (table.IsValid == 1)
+            {
+                sqlAdd = " AND (TotalCourseAmount>0 OR CommonCourseAmount>0 OR SpecialCourseAmount>0) ";
+            }
+            sqlStr = @"select * from OrderItems where LastModified>@LastModified 
+and OrderID in(select OrderID from OrderStatistics where CustomerID
+in(
+select CustomerID  FROM " + CustomerLink + @"[CloudCustomer].[dbo].[CustomerSearch] ss where ss.XDSchoolID=@SchoolID "+sqlAdd+"))";
+            //string sqlStr = "select * from OrderItems where LastModified>@LastModified";
             List<DbParameter> paras = new List<DbParameter>();
             string providerName = ConfigurationManager.ConnectionStrings["CloudTrade"].ProviderName;
             switch(providerName)

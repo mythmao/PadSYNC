@@ -16,10 +16,14 @@ namespace PadSYNC.Web.Controllers
         public ActionResult Index()
         {
             //查看当天日志
-            string date = DateTime.Now.ToString("yyyy")+"/"+DateTime.Now.ToString("yyyyMM")+"/"+DateTime.Now.ToString("yyyyMMdd")+".txt";
+            string date = DateTime.Now.ToString("yyyyMMdd")+".txt";
             string path= Server.MapPath("/log/" + date);
-            StringBuilder sb = new StringBuilder();
+            //StringBuilder sb = new StringBuilder();
             string result="";
+            if(!System.IO.File.Exists(path))
+            {
+                return View();
+            }
             using(FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read,FileShare.ReadWrite))
             {
                 //byte[] buf=new byte[1024];
@@ -32,10 +36,27 @@ namespace PadSYNC.Web.Controllers
                 StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default);
                 result = sr.ReadToEnd();
             }
-            string fileContent = sb.ToString();
+            //string fileContent = sb.ToString();
+            ViewBag.fileContent = result;
             //string fileContent = System.IO.File.ReadAllText(path,System.Text.Encoding.Default);
+            return View();
+        }
+        public ActionResult GetLog(string date)
+        {
+            int index = date.IndexOf(":");
+            string dt = date.Substring(0, index);
+            string result = "";
+            string path = Server.MapPath("" + dt.Replace(" ","/").Replace("-","") + ".txt");
+            if (!System.IO.File.Exists(path))
+            {
+                return Content(result);
+            }
+            using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            {
+                StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default);
+                result = sr.ReadToEnd();
+            }
             return Content(result);
         }
-
     }
 }

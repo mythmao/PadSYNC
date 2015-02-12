@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link href="/Content/jquery-easyui-1.4.1/themes/default/easyui.css" rel="stylesheet" />
+<link href="/Content/jquery-easyui-1.4.1/themes/icon.css" rel="stylesheet" />
+<link href="/Content/jquery-easyui-1.4.1/demo/demo.css" rel="stylesheet" />
+<script src="/Content/jquery-easyui-1.4.1/jquery.min.js"></script>
+<script src="/Content/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+<script src="/Content/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+
+<div style="padding:5px 0;clear:both;">
+    <input id="dt" class="easyui-datetimebox" name=""
+           data-options="required:true,showSeconds:false" value="2015-02-09 2" style="width:150px">
+    @*<input id="datebox" style="width:150px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser">*@
+    <a id="btnS" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+</div>
+<h2>日志内容</h2>
+<div id="spContent">
+
+</div>
+<script type="text/javascript">
+    function myformatter(date) {
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        var d = date.getDate();
+        var h = date.getHours();
+        var min = date.getMinutes();
+        return y + '-' + (m < 10 ? ('0' + m) : m) + '-' + (d < 10 ? ('0' + d) : d) + ' ' + (h < 10 ? ('0' + h) : h) + ':'+(min < 10 ? ('0' + min) : min);
+    }
+    function myparser(s) {
+        if (!s) return new Date();
+        var ss = (s.split('-'));
+        var y = parseInt(ss[0], 10);
+        var m = parseInt(ss[1], 10);
+        var d = parseInt(ss[2], 10);
+        if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
+            return new Date(y, m - 1, d);
+        } else {
+            return new Date();
+        }
+    }
+    $(function () {
+        var d = myformatter(new Date());
+        loadData(d);
+
+        //$("#datebox").datebox('setValue', d);
+        $("#dt").datetimebox("setValue",d);
+        $("#btnS").click(function () {
+            //var date = $("#datebox").datebox('getValue');
+            //if (date != "") {
+            //    loadData(date);
+            //}
+            var date = $("#dt").datetimebox("getValue");
+            loadData(date);
+        })
+    });
+    function loadData(date) {
+        $("#spContent").children().remove();
+        $.post("/Log/Getlog?time=" + new Date().getMilliseconds(), { "date": date }, function (data) {
+            if (data == null || data == "")
+            {
+                return;
+            }
+            var content = $('<span>' + data + '</span>');
+            $("#spContent").append(content);
+        })
+    }
+</script>
