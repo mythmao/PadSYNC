@@ -2,6 +2,7 @@
 using CommonTools;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -11,8 +12,11 @@ namespace PadSYNC.Web.Filters
 {
     public class LogsFilterAttribute : ActionFilterAttribute
     {
+        private string logEnable = ConfigurationManager.AppSettings["logEnable"];
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            if (logEnable == "false")
+                return;
             //base.OnActionExecuting(filterContext);
             string actionName = filterContext.ActionDescriptor.ActionName;
             string controllerName = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;

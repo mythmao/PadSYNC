@@ -53,18 +53,19 @@ namespace RabbitMQReceive
                         //continue;
                         try
                         {
+                            #region 处理消息
                             ac = JsonConvert.DeserializeObject<PadSYNC.Model.AssignCourse>(message);
                             //ac.Gid = new Guid("D67C7F51-29A1-4CA8-ACDF-08512FB3E8DF");
                             op = SYNCOperationBLL.GetById(ac.Gid);
                             //op.Id = ac.AssignID;
-                            
+
 
                             AssignCourseDataContract acdc = Translate.TranslateAssignCourseEntityToGuest(ac);
                             bool b = false;
                             string result = "";
                             AssignCourseServiceClient client = new AssignCourseServiceClient();
                             Console.WriteLine("处理消息*---*" + ea.DeliveryTag);
-                            if(ac.PadOperType==0)
+                            if (ac.PadOperType == 0)
                             {
                                 b = client.AddNewAssignCourseRetErrowString(out result, acdc);
                             }
@@ -91,7 +92,8 @@ namespace RabbitMQReceive
                                 op.Content = result;
                             }
                             Console.WriteLine("处理成功 {0}", op.Gid + "*---*" + result);
-                            channel.BasicAck(ea.DeliveryTag, false);
+                            channel.BasicAck(ea.DeliveryTag, false); 
+                            #endregion
                         }
                         catch (Exception ex)
                         {

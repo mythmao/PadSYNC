@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Content/jquery-easyui-1.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnGo").click(function () {
+                var aid = $("#txtId").val();
+                window.location = "/UpdateTest/Upadate?AssignID="+aid;
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <label for="txtId">AssignID:</label><input id="txtId" type="text" /><input id="btnGo" type="button" value="Go" />
+    </div>
+</body>
+</html>

@@ -12,6 +12,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace PadSYNC.Web.Controllers
 {
@@ -63,6 +64,29 @@ namespace PadSYNC.Web.Controllers
                 result = ito.GetTotalCount(table);
             }
             return result;
+        }
+        /// <summary>
+        /// 生成首次访问的数据库文件
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="branchId"></param>
+        /// <param name="schoolId"></param>
+        /// <returns></returns>
+        public ActionResult InitDatabase(string tableName,int branchId,int schoolId)
+        {
+            TableObject table = new TableObject();
+            table.TableName = tableName;
+            table.BranchID = branchId;
+            table.SchoolID = schoolId;
+            table.LastModified = new byte[8];
+            string result = GetTableData(table);
+            
+            string filePath = Server.MapPath("/Database/"+table.TableName+"-"+table.BranchID+"-"+table.SchoolID+".txt");
+            using(FileStream fs = new FileStream(filePath, FileMode.Create))
+            {
+                fs.Write(System.Text.Encoding.UTF8.GetBytes(result), 0, result.Length);
+            }
+            return Content("success");
         }
         [LogsFilterAttribute]
         public ActionResult GetDataInOne(string tables)

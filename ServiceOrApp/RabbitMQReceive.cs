@@ -45,8 +45,9 @@ namespace ServiceOrApp
                        
                         try
                         {
+                            #region 处理消息
                             ac = JsonConvert.DeserializeObject<PadSYNC.Model.AssignCourse>(message);
-                          
+
                             op = SYNCOperationBLL.GetById(ac.Gid);
 
                             AssignCourseDataContract acdc = Translate.TranslateAssignCourseEntityToGuest(ac);
@@ -82,8 +83,9 @@ namespace ServiceOrApp
                                 op.Content = result;
                             }
                             Console.WriteLine("处理成功 {0}", op.Gid + "*---*" + result);
-                            LogHelper.WriteLog(typeof(RabbitMQReceive), "处理成功 "+op.Gid + "*---*" + result);
-                            channel.BasicAck(ea.DeliveryTag, false);
+                            LogHelper.WriteLog(typeof(RabbitMQReceive), "处理成功 " + op.Gid + "*---*" + result);
+                            channel.BasicAck(ea.DeliveryTag, false); 
+                            #endregion
                         }
                         catch (Exception ex)
                         {

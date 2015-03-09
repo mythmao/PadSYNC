@@ -19,5 +19,6 @@ namespace PadSYNC.Model
         public string EndDate { get; set; }
         public int CurPage { get; set; }
         public int PageSize { get; set; }
+        public int IsValid { get; set; }
     }
 }

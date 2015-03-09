@@ -14,6 +14,7 @@ namespace PadSYNC.BLL
     {
         public static DatabaseProviderFactory factory = new DatabaseProviderFactory();
         public static Database db = factory.Create("CloudCustomer");
+        public static int timeOut = 720;
 
         public static int GetTotalCount(string sqlStr,params SqlParameter[] parameters)
         {
@@ -30,6 +31,7 @@ namespace PadSYNC.BLL
             using (DbCommand cmd = db.GetSqlStringCommand(sqlStr))
             {
                 cmd.Parameters.AddRange(parameters);
+                cmd.CommandTimeout = timeOut;
                 DataSet ds = db.ExecuteDataSet(cmd);
                 if (ds != null && ds.Tables.Count > 0)
                 {
