@@ -106,3 +106,11 @@ E:\project\PadSYNC\PadSYNC.Web\bin\zh-Hant\System.Spatial.resources.dll
 E:\project\PadSYNC\PadSYNC.Web\obj\Release\PadSYNC.Web.csprojResolveAssemblyReference.cache
 E:\project\PadSYNC\PadSYNC.Web\obj\Release\PadSYNC.Web.dll
 E:\project\PadSYNC\PadSYNC.Web\obj\Release\PadSYNC.Web.pdb
+E:\project\PadSYNC\PadSYNC.Web\bin\CommonTools.dll
+E:\project\PadSYNC\PadSYNC.Web\bin\MySql.Data.dll
+E:\project\PadSYNC\PadSYNC.Web\bin\MySql.Data.Entity.dll
+E:\project\PadSYNC\PadSYNC.Web\bin\RabbitMQ.Client.dll
+E:\project\PadSYNC\PadSYNC.Web\bin\log4net.dll
+E:\project\PadSYNC\PadSYNC.Web\bin\CommonTools.pdb
+E:\project\PadSYNC\PadSYNC.Web\bin\RabbitMQ.Client.xml
+E:\project\PadSYNC\PadSYNC.Web\bin\log4net.xml

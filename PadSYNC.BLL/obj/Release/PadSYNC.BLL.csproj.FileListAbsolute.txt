@@ -21,3 +21,5 @@ E:\project\PadSYNC\PadSYNC.BLL\bin\Release\Microsoft.Practices.Unity.Interceptio
 E:\project\PadSYNC\PadSYNC.BLL\obj\Release\PadSYNC.BLL.csprojResolveAssemblyReference.cache
 E:\project\PadSYNC\PadSYNC.BLL\obj\Release\PadSYNC.BLL.dll
 E:\project\PadSYNC\PadSYNC.BLL\obj\Release\PadSYNC.BLL.pdb
+E:\project\PadSYNC\PadSYNC.BLL\bin\Release\MySql.Data.dll
+E:\project\PadSYNC\PadSYNC.BLL\bin\Release\MySql.Data.Entity.dll
